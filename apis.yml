@@ -8,11 +8,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Migration
-  - Cloud Migration
-  - Tracking
-  - Operations
   - AWS
+  - Cloud Migration
+  - Migration
+  - Operations
+  - Tracking
 url: >-
   https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -28,8 +28,8 @@ apis:
     humanURL: https://aws.amazon.com/migration-hub/
     baseURL: https://mgh.amazonaws.com
     tags:
-      - Migration
       - Cloud Migration
+      - Migration
       - Tracking
     properties:
       - type: Documentation
