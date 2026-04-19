@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-created-artifact-description-structure.json",
+  "name": "CreatedArtifactDescription",
+  "type": "string",
+  "description": "CreatedArtifactDescription schema from Amazon Migration Hub API",
+  "pattern": "^.{0,500}$",
+  "minLength": 0,
+  "maxLength": 500
+}

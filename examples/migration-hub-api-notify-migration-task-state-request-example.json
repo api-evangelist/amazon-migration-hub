@@ -1,0 +1,8 @@
+{
+  "ProgressUpdateStream": "example-value",
+  "MigrationTaskName": "example-resource",
+  "Task": "example-value",
+  "UpdateDateTime": "example-value",
+  "NextUpdateSeconds": "example-value",
+  "DryRun": "example-value"
+}

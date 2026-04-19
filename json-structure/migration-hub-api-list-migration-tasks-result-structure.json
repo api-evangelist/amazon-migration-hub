@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-list-migration-tasks-result-structure.json",
+  "name": "ListMigrationTasksResult",
+  "type": "object",
+  "description": "ListMigrationTasksResult schema from Amazon Migration Hub API",
+  "properties": {
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from."
+        }
+      ]
+    },
+    "MigrationTaskSummaryList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MigrationTaskSummaryList"
+        },
+        {
+          "description": "Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task."
+        }
+      ]
+    }
+  }
+}

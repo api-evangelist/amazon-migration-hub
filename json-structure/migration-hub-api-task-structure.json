@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-task-structure.json",
+  "name": "Task",
+  "type": "object",
+  "description": "Task object encapsulating task information.",
+  "properties": {
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Status"
+        },
+        {
+          "description": "Status of the task - Not Started, In-Progress, Complete."
+        }
+      ]
+    },
+    "StatusDetail": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatusDetail"
+        },
+        {
+          "description": "Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state."
+        }
+      ]
+    },
+    "ProgressPercent": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProgressPercent"
+        },
+        {
+          "description": "Indication of the percentage completion of the task."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Status"
+  ]
+}

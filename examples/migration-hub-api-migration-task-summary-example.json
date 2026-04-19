@@ -1,0 +1,8 @@
+{
+  "ProgressUpdateStream": "example-value",
+  "MigrationTaskName": "example-resource",
+  "Status": "ACTIVE",
+  "ProgressPercent": "example-value",
+  "StatusDetail": "ACTIVE",
+  "UpdateDateTime": "example-value"
+}

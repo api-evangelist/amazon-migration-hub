@@ -1,0 +1,6 @@
+{
+  "ApplicationId": "id-abc123",
+  "Status": "ACTIVE",
+  "UpdateDateTime": "example-value",
+  "DryRun": "example-value"
+}

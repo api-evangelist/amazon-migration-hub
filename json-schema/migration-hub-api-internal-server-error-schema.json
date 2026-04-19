@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-schema/migration-hub-api-internal-server-error-schema.json",
+  "title": "InternalServerError",
+  "description": "InternalServerError schema from Amazon Migration Hub API"
+}

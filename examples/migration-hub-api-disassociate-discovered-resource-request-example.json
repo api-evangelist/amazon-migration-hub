@@ -1,0 +1,6 @@
+{
+  "ProgressUpdateStream": "example-value",
+  "MigrationTaskName": "example-resource",
+  "ConfigurationId": "id-abc123",
+  "DryRun": "example-value"
+}

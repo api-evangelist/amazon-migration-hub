@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-schema/migration-hub-api-discovered-resource-schema.json",
+  "title": "DiscoveredResource",
+  "description": "Object representing the on-premises resource being migrated.",
+  "type": "object",
+  "properties": {
+    "ConfigurationId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigurationId"
+        },
+        {
+          "description": "The configurationId in Application Discovery Service that uniquely identifies the on-premise resource."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DiscoveredResourceDescription"
+        },
+        {
+          "description": "A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ConfigurationId"
+  ]
+}

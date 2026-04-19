@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-schema/migration-hub-api-migration-task-schema.json",
+  "title": "MigrationTask",
+  "description": "Represents a migration task in a migration tool.",
+  "type": "object",
+  "properties": {
+    "ProgressUpdateStream": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProgressUpdateStream"
+        },
+        {
+          "description": "A name that identifies the vendor of the migration tool being used."
+        }
+      ]
+    },
+    "MigrationTaskName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MigrationTaskName"
+        },
+        {
+          "description": "Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> "
+        }
+      ]
+    },
+    "Task": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Task"
+        },
+        {
+          "description": "Task object encapsulating task information."
+        }
+      ]
+    },
+    "UpdateDateTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateDateTime"
+        },
+        {
+          "description": "The timestamp when the task was gathered."
+        }
+      ]
+    },
+    "ResourceAttributeList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LatestResourceAttributeList"
+        },
+        {
+          "description": "Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository."
+        }
+      ]
+    }
+  }
+}

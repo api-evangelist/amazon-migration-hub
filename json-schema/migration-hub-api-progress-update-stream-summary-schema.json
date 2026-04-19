@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-schema/migration-hub-api-progress-update-stream-summary-schema.json",
+  "title": "ProgressUpdateStreamSummary",
+  "description": "Summary of the AWS resource used for access control that is implicitly linked to your AWS account.",
+  "type": "object",
+  "properties": {
+    "ProgressUpdateStreamName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProgressUpdateStream"
+        },
+        {
+          "description": "The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> "
+        }
+      ]
+    }
+  }
+}

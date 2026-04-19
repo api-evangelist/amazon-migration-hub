@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-schema/migration-hub-api-created-artifact-name-schema.json",
+  "title": "CreatedArtifactName",
+  "description": "CreatedArtifactName schema from Amazon Migration Hub API",
+  "type": "string",
+  "pattern": "arn:[a-z-]+:[a-z0-9-]+:(?:[a-z0-9-]+|):(?:[0-9]{12}|):.*",
+  "minLength": 1,
+  "maxLength": 1600
+}

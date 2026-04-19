@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-schema/migration-hub-api-max-results-created-artifacts-schema.json",
+  "title": "MaxResultsCreatedArtifacts",
+  "description": "MaxResultsCreatedArtifacts schema from Amazon Migration Hub API",
+  "type": "integer",
+  "minimum": 1,
+  "maximum": 10
+}

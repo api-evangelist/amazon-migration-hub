@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-application-state-list-structure.json",
+  "name": "ApplicationStateList",
+  "type": "array",
+  "description": "ApplicationStateList schema from Amazon Migration Hub API",
+  "items": {
+    "$ref": "#/components/schemas/ApplicationState"
+  },
+  "minItems": 0,
+  "maxItems": 1000
+}

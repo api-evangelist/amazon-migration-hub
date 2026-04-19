@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-migration-task-summary-list-structure.json",
+  "name": "MigrationTaskSummaryList",
+  "type": "array",
+  "description": "MigrationTaskSummaryList schema from Amazon Migration Hub API",
+  "items": {
+    "$ref": "#/components/schemas/MigrationTaskSummary"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-discovered-resource-list-structure.json",
+  "name": "DiscoveredResourceList",
+  "type": "array",
+  "description": "DiscoveredResourceList schema from Amazon Migration Hub API",
+  "items": {
+    "$ref": "#/components/schemas/DiscoveredResource"
+  }
+}

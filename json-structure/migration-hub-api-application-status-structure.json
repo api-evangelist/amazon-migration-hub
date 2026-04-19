@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-application-status-structure.json",
+  "name": "ApplicationStatus",
+  "type": "string",
+  "description": "ApplicationStatus schema from Amazon Migration Hub API",
+  "enum": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED"
+  ]
+}

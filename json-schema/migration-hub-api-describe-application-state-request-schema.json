@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-schema/migration-hub-api-describe-application-state-request-schema.json",
+  "title": "DescribeApplicationStateRequest",
+  "description": "DescribeApplicationStateRequest schema from Amazon Migration Hub API",
+  "type": "object",
+  "properties": {
+    "ApplicationId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationId"
+        },
+        {
+          "description": "The configurationId in Application Discovery Service that uniquely identifies the grouped application."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ApplicationId"
+  ]
+}

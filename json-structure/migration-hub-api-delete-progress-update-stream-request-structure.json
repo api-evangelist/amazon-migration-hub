@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-delete-progress-update-stream-request-structure.json",
+  "name": "DeleteProgressUpdateStreamRequest",
+  "type": "object",
+  "description": "DeleteProgressUpdateStreamRequest schema from Amazon Migration Hub API",
+  "properties": {
+    "ProgressUpdateStreamName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProgressUpdateStream"
+        },
+        {
+          "description": "The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> "
+        }
+      ]
+    },
+    "DryRun": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DryRun"
+        },
+        {
+          "description": "Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ProgressUpdateStreamName"
+  ]
+}

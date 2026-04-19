@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-latest-resource-attribute-list-structure.json",
+  "name": "LatestResourceAttributeList",
+  "type": "array",
+  "description": "LatestResourceAttributeList schema from Amazon Migration Hub API",
+  "items": {
+    "$ref": "#/components/schemas/ResourceAttribute"
+  },
+  "minItems": 0,
+  "maxItems": 100
+}

@@ -1,0 +1,325 @@
+vocabulary: 1.0.0
+info:
+  provider: Amazon Migration Hub
+  description: Unified vocabulary for Amazon Migration Hub APIs and capabilities.
+  created: '2026-04-19'
+  modified: '2026-04-19'
+operational:
+  apis:
+  - name: Amazon Migration Hub API
+    namespace: migration_hub
+    version: '2018-11-14'
+    baseUrl: http://mgh.{region}.amazonaws.com
+    status: active
+  resources:
+  - name: '#X-Amz-Target=AWSMigrationHub.AssociateCreatedArtifact'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.CreateProgressUpdateStream'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.DeleteProgressUpdateStream'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.DescribeApplicationState'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.DisassociateCreatedArtifact'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.DisassociateDiscoveredResource'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.ImportMigrationTask'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.ListApplicationStates'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.ListCreatedArtifacts'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.ListMigrationTasks'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.ListProgressUpdateStreams'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.NotifyApplicationState'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.NotifyMigrationTaskState'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: '#X-Amz-Target=AWSMigrationHub.PutResourceAttributes'
+    api: Amazon Migration Hub API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  actions:
+  - name: list
+    httpMethod: GET
+    pattern: read
+  - name: get
+    httpMethod: GET
+    pattern: read
+  - name: create
+    httpMethod: POST
+    pattern: write
+  - name: update
+    httpMethod: PUT
+    pattern: write
+  - name: delete
+    httpMethod: DELETE
+    pattern: write
+  schemas:
+    core:
+    - AssociateCreatedArtifactResult
+    - AssociateCreatedArtifactRequest
+    - InternalServerError
+    - DryRunOperation
+    - UnauthorizedOperation
+    - AssociateDiscoveredResourceResult
+    - AssociateDiscoveredResourceRequest
+    - CreateProgressUpdateStreamResult
+  parameters:
+    pagination:
+    - name: nextToken
+      description: Pagination token
+    - name: maxResults
+      description: Max results per page
+  authentication:
+    schemes:
+    - type: awsSigV4
+      description: AWS Signature Version 4
+capability:
+  workflows:
+  - name: Amazon Migration Hub Workflow
+    file: capabilities/amazon-migration-hub-media-workflow.yaml
+    description: Amazon Migration Hub media processing workflow
+    personas:
+    - Broadcast Engineer
+    - Media Developer
+    domains:
+    - Media Processing
+  personas:
+  - id: broadcast-engineer
+    name: Broadcast Engineer
+    description: Engineer managing broadcast media workflows
+    workflows:
+    - Amazon Migration Hub Workflow
+  - id: media-developer
+    name: Media Developer
+    description: Developer building media processing applications
+    workflows:
+    - Amazon Migration Hub Workflow
+  domains:
+  - name: Media Processing
+    description: AWS media processing and delivery
+  namespaces:
+  - name: migration_hub
+    type: consumed
+  - name: migration-hub-workflow-api
+    type: rest
+    port: 8080
+  - name: migration-hub-workflow-mcp
+    type: mcp
+    port: 9090
+  binds:
+  - name: AWS_ACCESS_KEY_ID
+  - name: AWS_SECRET_ACCESS_KEY
+crossReference:
+- resource: '#X-Amz-Target=AWSMigrationHub.AssociateCreatedArtifact'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.CreateProgressUpdateStream'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.DeleteProgressUpdateStream'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.DescribeApplicationState'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.DisassociateCreatedArtifact'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.DisassociateDiscoveredResource'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.ImportMigrationTask'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.ListApplicationStates'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.ListCreatedArtifacts'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.ListMigrationTasks'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.ListProgressUpdateStreams'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.NotifyApplicationState'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.NotifyMigrationTaskState'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer
+- resource: '#X-Amz-Target=AWSMigrationHub.PutResourceAttributes'
+  api: Amazon Migration Hub API
+  workflows:
+  - Amazon Migration Hub Workflow
+  personas:
+  - Broadcast Engineer

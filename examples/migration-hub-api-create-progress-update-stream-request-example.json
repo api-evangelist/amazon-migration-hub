@@ -1,0 +1,4 @@
+{
+  "ProgressUpdateStreamName": "example-resource",
+  "DryRun": "example-value"
+}

@@ -1,0 +1,6 @@
+{
+  "ProgressUpdateStream": "example-value",
+  "MigrationTaskName": "example-resource",
+  "NextToken": "example-value",
+  "MaxResults": "example-value"
+}

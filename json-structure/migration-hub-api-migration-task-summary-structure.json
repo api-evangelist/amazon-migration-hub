@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-migration-task-summary-structure.json",
+  "name": "MigrationTaskSummary",
+  "type": "object",
+  "description": "MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code> for each task.",
+  "properties": {
+    "ProgressUpdateStream": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProgressUpdateStream"
+        },
+        {
+          "description": "An AWS resource used for access control. It should uniquely identify the migration tool as it is used for all updates made by the tool."
+        }
+      ]
+    },
+    "MigrationTaskName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MigrationTaskName"
+        },
+        {
+          "description": "Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> "
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Status"
+        },
+        {
+          "description": "Status of the task."
+        }
+      ]
+    },
+    "ProgressPercent": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProgressPercent"
+        },
+        {
+          "description": "Indication of the percentage completion of the task."
+        }
+      ]
+    },
+    "StatusDetail": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatusDetail"
+        },
+        {
+          "description": "Detail information of what is being done within the overall status state."
+        }
+      ]
+    },
+    "UpdateDateTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateDateTime"
+        },
+        {
+          "description": "The timestamp when the task was gathered."
+        }
+      ]
+    }
+  }
+}

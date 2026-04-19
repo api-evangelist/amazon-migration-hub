@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-list-discovered-resources-result-structure.json",
+  "name": "ListDiscoveredResourcesResult",
+  "type": "object",
+  "description": "ListDiscoveredResourcesResult schema from Amazon Migration Hub API",
+  "properties": {
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from."
+        }
+      ]
+    },
+    "DiscoveredResourceList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DiscoveredResourceList"
+        },
+        {
+          "description": "Returned list of discovered resources associated with the given MigrationTask."
+        }
+      ]
+    }
+  }
+}

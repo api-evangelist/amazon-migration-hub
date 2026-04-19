@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-unauthorized-operation-structure.json",
+  "name": "UnauthorizedOperation",
+  "description": "UnauthorizedOperation schema from Amazon Migration Hub API"
+}

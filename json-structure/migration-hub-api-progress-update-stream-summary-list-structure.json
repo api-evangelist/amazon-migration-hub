@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-progress-update-stream-summary-list-structure.json",
+  "name": "ProgressUpdateStreamSummaryList",
+  "type": "array",
+  "description": "ProgressUpdateStreamSummaryList schema from Amazon Migration Hub API",
+  "items": {
+    "$ref": "#/components/schemas/ProgressUpdateStreamSummary"
+  }
+}

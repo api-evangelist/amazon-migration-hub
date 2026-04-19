@@ -1,0 +1,6 @@
+{
+  "ProgressUpdateStream": "example-value",
+  "MigrationTaskName": "example-resource",
+  "DiscoveredResource": "example-value",
+  "DryRun": "example-value"
+}

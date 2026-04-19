@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-application-ids-structure.json",
+  "name": "ApplicationIds",
+  "type": "array",
+  "description": "ApplicationIds schema from Amazon Migration Hub API",
+  "items": {
+    "$ref": "#/components/schemas/ApplicationId"
+  },
+  "minItems": 1,
+  "maxItems": 100
+}

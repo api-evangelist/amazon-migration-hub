@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-invalid-input-exception-structure.json",
+  "name": "InvalidInputException",
+  "description": "InvalidInputException schema from Amazon Migration Hub API"
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-token-structure.json",
+  "name": "Token",
+  "type": "string",
+  "description": "Token schema from Amazon Migration Hub API",
+  "pattern": "^[a-zA-Z0-9\\/\\+\\=]{0,2048}$",
+  "minLength": 0,
+  "maxLength": 2048
+}

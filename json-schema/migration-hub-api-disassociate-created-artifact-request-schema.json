@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-schema/migration-hub-api-disassociate-created-artifact-request-schema.json",
+  "title": "DisassociateCreatedArtifactRequest",
+  "description": "DisassociateCreatedArtifactRequest schema from Amazon Migration Hub API",
+  "type": "object",
+  "properties": {
+    "ProgressUpdateStream": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProgressUpdateStream"
+        },
+        {
+          "description": "The name of the ProgressUpdateStream. "
+        }
+      ]
+    },
+    "MigrationTaskName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MigrationTaskName"
+        },
+        {
+          "description": "Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> "
+        }
+      ]
+    },
+    "CreatedArtifactName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreatedArtifactName"
+        },
+        {
+          "description": "An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)"
+        }
+      ]
+    },
+    "DryRun": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DryRun"
+        },
+        {
+          "description": "Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ProgressUpdateStream",
+    "MigrationTaskName",
+    "CreatedArtifactName"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-schema/migration-hub-api-list-discovered-resources-request-schema.json",
+  "title": "ListDiscoveredResourcesRequest",
+  "description": "ListDiscoveredResourcesRequest schema from Amazon Migration Hub API",
+  "type": "object",
+  "properties": {
+    "ProgressUpdateStream": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProgressUpdateStream"
+        },
+        {
+          "description": "The name of the ProgressUpdateStream."
+        }
+      ]
+    },
+    "MigrationTaskName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MigrationTaskName"
+        },
+        {
+          "description": "The name of the MigrationTask. <i>Do not store personal data in this field.</i> "
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxResultsResources"
+        },
+        {
+          "description": "The maximum number of results returned per page."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ProgressUpdateStream",
+    "MigrationTaskName"
+  ]
+}

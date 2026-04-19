@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-migration-hub/refs/heads/main/json-structure/migration-hub-api-dry-run-operation-structure.json",
+  "name": "DryRunOperation",
+  "description": "DryRunOperation schema from Amazon Migration Hub API"
+}

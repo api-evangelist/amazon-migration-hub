@@ -1,0 +1,209 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "pan": "https://pan.dev/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Token": "pan:Token",
+    "DiscoveredResource": "pan:DiscoveredResource",
+    "CreatedArtifactDescription": "pan:CreatedArtifactDescription",
+    "DisassociateCreatedArtifactRequest": "pan:DisassociateCreatedArtifactRequest",
+    "ListProgressUpdateStreamsResult": "pan:ListProgressUpdateStreamsResult",
+    "ProgressUpdateStream": "pan:ProgressUpdateStream",
+    "ConfigurationId": "pan:ConfigurationId",
+    "DescribeMigrationTaskResult": "pan:DescribeMigrationTaskResult",
+    "ProgressUpdateStreamSummary": "pan:ProgressUpdateStreamSummary",
+    "Task": "pan:Task",
+    "ResourceAttributeType": "pan:ResourceAttributeType",
+    "InvalidInputException": "pan:InvalidInputException",
+    "DryRun": "pan:DryRun",
+    "DescribeApplicationStateResult": "pan:DescribeApplicationStateResult",
+    "NotifyMigrationTaskStateRequest": "pan:NotifyMigrationTaskStateRequest",
+    "ResourceAttributeValue": "pan:ResourceAttributeValue",
+    "CreatedArtifactList": "pan:CreatedArtifactList",
+    "ImportMigrationTaskResult": "pan:ImportMigrationTaskResult",
+    "CreatedArtifactName": "pan:CreatedArtifactName",
+    "ResourceAttributeList": "pan:ResourceAttributeList",
+    "ResourceNotFoundException": "pan:ResourceNotFoundException",
+    "DescribeApplicationStateRequest": "pan:DescribeApplicationStateRequest",
+    "ResourceAttribute": "pan:ResourceAttribute",
+    "ListMigrationTasksResult": "pan:ListMigrationTasksResult",
+    "DryRunOperation": "pan:DryRunOperation",
+    "ListProgressUpdateStreamsRequest": "pan:ListProgressUpdateStreamsRequest",
+    "MaxResultsCreatedArtifacts": "pan:MaxResultsCreatedArtifacts",
+    "MigrationTaskName": "pan:MigrationTaskName",
+    "PutResourceAttributesRequest": "pan:PutResourceAttributesRequest",
+    "ImportMigrationTaskRequest": "pan:ImportMigrationTaskRequest",
+    "CreateProgressUpdateStreamRequest": "pan:CreateProgressUpdateStreamRequest",
+    "ListCreatedArtifactsResult": "pan:ListCreatedArtifactsResult",
+    "MaxResults": "pan:MaxResults",
+    "DeleteProgressUpdateStreamRequest": "pan:DeleteProgressUpdateStreamRequest",
+    "ResourceName": "pan:ResourceName",
+    "DiscoveredResourceList": "pan:DiscoveredResourceList",
+    "CreatedArtifact": "pan:CreatedArtifact",
+    "ProgressPercent": "pan:ProgressPercent",
+    "ListApplicationStatesRequest": "pan:ListApplicationStatesRequest",
+    "AssociateDiscoveredResourceResult": "pan:AssociateDiscoveredResourceResult",
+    "CreateProgressUpdateStreamResult": "pan:CreateProgressUpdateStreamResult",
+    "InternalServerError": "pan:InternalServerError",
+    "PolicyErrorException": "pan:PolicyErrorException",
+    "UnauthorizedOperation": "pan:UnauthorizedOperation",
+    "MigrationTaskSummary": "pan:MigrationTaskSummary",
+    "ApplicationId": "pan:ApplicationId",
+    "ListApplicationStatesResult": "pan:ListApplicationStatesResult",
+    "ListMigrationTasksRequest": "pan:ListMigrationTasksRequest",
+    "ListDiscoveredResourcesResult": "pan:ListDiscoveredResourcesResult",
+    "MaxResultsResources": "pan:MaxResultsResources",
+    "UpdateDateTime": "pan:UpdateDateTime",
+    "HomeRegionNotSetException": "pan:HomeRegionNotSetException",
+    "Status": "pan:Status",
+    "DiscoveredResourceDescription": "pan:DiscoveredResourceDescription",
+    "ListDiscoveredResourcesRequest": "pan:ListDiscoveredResourcesRequest",
+    "ApplicationState": "pan:ApplicationState",
+    "NextUpdateSeconds": "pan:NextUpdateSeconds",
+    "NotifyApplicationStateResult": "pan:NotifyApplicationStateResult",
+    "DescribeMigrationTaskRequest": "pan:DescribeMigrationTaskRequest",
+    "StatusDetail": "pan:StatusDetail",
+    "ProgressUpdateStreamSummaryList": "pan:ProgressUpdateStreamSummaryList",
+    "ApplicationStateList": "pan:ApplicationStateList",
+    "NotifyApplicationStateRequest": "pan:NotifyApplicationStateRequest",
+    "ApplicationIds": "pan:ApplicationIds",
+    "PutResourceAttributesResult": "pan:PutResourceAttributesResult",
+    "ApplicationStatus": "pan:ApplicationStatus",
+    "DeleteProgressUpdateStreamResult": "pan:DeleteProgressUpdateStreamResult",
+    "DisassociateDiscoveredResourceResult": "pan:DisassociateDiscoveredResourceResult",
+    "NotifyMigrationTaskStateResult": "pan:NotifyMigrationTaskStateResult",
+    "DisassociateDiscoveredResourceRequest": "pan:DisassociateDiscoveredResourceRequest",
+    "AssociateCreatedArtifactResult": "pan:AssociateCreatedArtifactResult",
+    "LatestResourceAttributeList": "pan:LatestResourceAttributeList",
+    "AssociateDiscoveredResourceRequest": "pan:AssociateDiscoveredResourceRequest",
+    "ListCreatedArtifactsRequest": "pan:ListCreatedArtifactsRequest",
+    "MigrationTask": "pan:MigrationTask",
+    "AssociateCreatedArtifactRequest": "pan:AssociateCreatedArtifactRequest",
+    "DisassociateCreatedArtifactResult": "pan:DisassociateCreatedArtifactResult",
+    "MigrationTaskSummaryList": "pan:MigrationTaskSummaryList",
+    "configurationId": {
+      "@id": "pan:configuration_id",
+      "@type": "xsd:string"
+    },
+    "description": "schema:description",
+    "progressUpdateStream": {
+      "@id": "pan:progress_update_stream",
+      "@type": "xsd:string"
+    },
+    "migrationTaskName": {
+      "@id": "pan:migration_task_name",
+      "@type": "xsd:string"
+    },
+    "createdArtifactName": {
+      "@id": "pan:created_artifact_name",
+      "@type": "xsd:string"
+    },
+    "dryRun": {
+      "@id": "pan:dry_run",
+      "@type": "xsd:string"
+    },
+    "progressUpdateStreamSummaryList": {
+      "@id": "pan:progress_update_stream_summary_list",
+      "@type": "xsd:string"
+    },
+    "nextToken": {
+      "@id": "pan:next_token",
+      "@type": "xsd:string"
+    },
+    "migrationTask": {
+      "@id": "pan:migration_task",
+      "@type": "xsd:string"
+    },
+    "progressUpdateStreamName": {
+      "@id": "pan:progress_update_stream_name",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "pan:status",
+      "@type": "xsd:string"
+    },
+    "statusDetail": {
+      "@id": "pan:status_detail",
+      "@type": "xsd:string"
+    },
+    "progressPercent": {
+      "@id": "pan:progress_percent",
+      "@type": "xsd:string"
+    },
+    "applicationStatus": {
+      "@id": "pan:application_status",
+      "@type": "xsd:string"
+    },
+    "lastUpdatedTime": {
+      "@id": "pan:last_updated_time",
+      "@type": "xsd:string"
+    },
+    "task": {
+      "@id": "pan:task",
+      "@type": "xsd:string"
+    },
+    "updateDateTime": {
+      "@id": "pan:update_date_time",
+      "@type": "xsd:string"
+    },
+    "nextUpdateSeconds": {
+      "@id": "pan:next_update_seconds",
+      "@type": "xsd:string"
+    },
+    "applicationId": {
+      "@id": "pan:application_id",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "pan:type",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "pan:value",
+      "@type": "xsd:string"
+    },
+    "migrationTaskSummaryList": {
+      "@id": "pan:migration_task_summary_list",
+      "@type": "xsd:string"
+    },
+    "maxResults": {
+      "@id": "pan:max_results",
+      "@type": "xsd:string"
+    },
+    "resourceAttributeList": {
+      "@id": "pan:resource_attribute_list",
+      "@type": "xsd:string"
+    },
+    "createdArtifactList": {
+      "@id": "pan:created_artifact_list",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "applicationIds": {
+      "@id": "pan:application_ids",
+      "@type": "xsd:string"
+    },
+    "applicationStateList": {
+      "@id": "pan:application_state_list",
+      "@type": "xsd:string"
+    },
+    "resourceName": {
+      "@id": "pan:resource_name",
+      "@type": "xsd:string"
+    },
+    "discoveredResourceList": {
+      "@id": "pan:discovered_resource_list",
+      "@type": "xsd:string"
+    },
+    "discoveredResource": {
+      "@id": "pan:discovered_resource",
+      "@type": "xsd:string"
+    },
+    "createdArtifact": {
+      "@id": "pan:created_artifact",
+      "@type": "xsd:string"
+    }
+  }
+}
