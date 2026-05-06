@@ -1,14 +1,15 @@
-naftiko: 1.0.0-alpha1
+naftiko: 1.0.0-alpha2
 info:
   label: Amazon Migration Hub Workflow
-  description: Workflow capability for Amazon Migration Hub media processing operations for broadcast engineers and media developers.
+  description: Workflow capability for Amazon Migration Hub media processing operations for broadcast engineers and media
+    developers.
   tags:
   - AWS
   - Media
   - Broadcasting
   - Workflow
   created: '2026-04-19'
-  modified: '2026-04-19'
+  modified: '2026-05-06'
 binds:
 - namespace: env
   keys:
@@ -17,8 +18,359 @@ binds:
     AWS_REGION: AWS_REGION
 capability:
   consumes:
-  - import: migration_hub
-    location: ./shared/migration-hub.yaml
+  - type: http
+    namespace: migration_hub
+    baseUri: http://mgh.{region}.amazonaws.com
+    description: Amazon Migration Hub REST API
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{AWS_ACCESS_KEY_ID}}'
+      placement: header
+    resources:
+    - name: default
+      path: /
+      description: Amazon Migration Hub resources
+      operations:
+      - name: associate-created-artifact
+        method: POST
+        description: AssociateCreatedArtifact
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: associate-discovered-resource
+        method: POST
+        description: AssociateDiscoveredResource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: create-progress-update-stream
+        method: POST
+        description: CreateProgressUpdateStream
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: delete-progress-update-stream
+        method: POST
+        description: DeleteProgressUpdateStream
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: describe-application-state
+        method: POST
+        description: DescribeApplicationState
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: describe-migration-task
+        method: POST
+        description: DescribeMigrationTask
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: disassociate-created-artifact
+        method: POST
+        description: DisassociateCreatedArtifact
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: disassociate-discovered-resource
+        method: POST
+        description: DisassociateDiscoveredResource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: import-migration-task
+        method: POST
+        description: ImportMigrationTask
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: list-application-states
+        method: POST
+        description: ListApplicationStates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          required: false
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: list-created-artifacts
+        method: POST
+        description: ListCreatedArtifacts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          required: false
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: list-discovered-resources
+        method: POST
+        description: ListDiscoveredResources
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          required: false
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: list-migration-tasks
+        method: POST
+        description: ListMigrationTasks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          required: false
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: list-progress-update-streams
+        method: POST
+        description: ListProgressUpdateStreams
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          required: false
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: notify-application-state
+        method: POST
+        description: NotifyApplicationState
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: notify-migration-task-state
+        method: POST
+        description: NotifyMigrationTaskState
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
+      - name: put-resource-attributes
+        method: POST
+        description: PutResourceAttributes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+          description: X-Amz-Target
+        body:
+          type: json
+          data: {}
   exposes:
   - type: rest
     port: 8080
