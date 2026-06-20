@@ -3,7 +3,7 @@ name: Amazon Migration Hub
 description: AWS Migration Hub provides a single location to track the progress of application migrations across multiple
   AWS and partner solutions, giving visibility into migration progress and enabling the use of other AWS migration tools.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - AWS
 - Broadcasting
