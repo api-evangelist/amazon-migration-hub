@@ -38,6 +38,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-migration-hub.yaml
 common:
+- type: TrustCenter
+  url: security/amazon-migration-hub-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-migration-hub-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-migration-hub-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-migration-hub-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/migration-hub/
 - type: Documentation
