@@ -38,6 +38,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-migration-hub.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-migration-hub-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-migration-hub-trust-center.yml
 - type: VulnerabilityDisclosure
