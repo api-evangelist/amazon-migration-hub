@@ -1,0 +1,368 @@
+openapi: 3.0.0
+info:
+  version: 2017-05-31
+  x-release: v4
+  title: 'AWS Migration Hub #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.DisassociateDiscoveredResource API'
+  description: <p>The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.</p> <p>Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home region.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: AWSMigrationHub
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/AWSMigrationHub-2017-05-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://mgh.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Migration Hub multi-region endpoint
+- url: https://mgh.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Migration Hub multi-region endpoint
+- url: http://mgh.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Migration Hub endpoint for China (Beijing) and China (Ningxia)
+- url: https://mgh.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Migration Hub endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSMigrationHub.DisassociateDiscoveredResource'
+paths:
+  /#X-Amz-Target=AWSMigrationHub.DisassociateDiscoveredResource:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: DisassociateDiscoveredResource
+      description: Disassociate an Application Discovery Service discovered resource from a migration task.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DisassociateDiscoveredResourceResult'
+              examples:
+                DisassociateDiscoveredResource200Example:
+                  summary: Default DisassociateDiscoveredResource 200 response
+                  x-microcks-default: true
+                  value: {}
+        '480':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                DisassociateDiscoveredResource480Example:
+                  summary: Default DisassociateDiscoveredResource 480 response
+                  x-microcks-default: true
+                  value: {}
+        '481':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+              examples:
+                DisassociateDiscoveredResource481Example:
+                  summary: Default DisassociateDiscoveredResource 481 response
+                  x-microcks-default: true
+                  value: {}
+        '482':
+          description: InternalServerError
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+              examples:
+                DisassociateDiscoveredResource482Example:
+                  summary: Default DisassociateDiscoveredResource 482 response
+                  x-microcks-default: true
+                  value: {}
+        '483':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                DisassociateDiscoveredResource483Example:
+                  summary: Default DisassociateDiscoveredResource 483 response
+                  x-microcks-default: true
+                  value: {}
+        '484':
+          description: DryRunOperation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DryRunOperation'
+              examples:
+                DisassociateDiscoveredResource484Example:
+                  summary: Default DisassociateDiscoveredResource 484 response
+                  x-microcks-default: true
+                  value: {}
+        '485':
+          description: UnauthorizedOperation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedOperation'
+              examples:
+                DisassociateDiscoveredResource485Example:
+                  summary: Default DisassociateDiscoveredResource 485 response
+                  x-microcks-default: true
+                  value: {}
+        '486':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                DisassociateDiscoveredResource486Example:
+                  summary: Default DisassociateDiscoveredResource 486 response
+                  x-microcks-default: true
+                  value: {}
+        '487':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DisassociateDiscoveredResource487Example:
+                  summary: Default DisassociateDiscoveredResource 487 response
+                  x-microcks-default: true
+                  value: {}
+        '488':
+          description: HomeRegionNotSetException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HomeRegionNotSetException'
+              examples:
+                DisassociateDiscoveredResource488Example:
+                  summary: Default DisassociateDiscoveredResource 488 response
+                  x-microcks-default: true
+                  value: {}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DisassociateDiscoveredResourceRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSMigrationHub.DisassociateDiscoveredResource
+      summary: Amazon Migration Hub Disassociate Discovered Resource
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSMigrationHub.DisassociateDiscoveredResource'
+components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    DisassociateDiscoveredResourceResult:
+      type: object
+      properties: {}
+    MigrationTaskName:
+      type: string
+      pattern: '[^:|]+'
+      minLength: 1
+      maxLength: 256
+    InvalidInputException: {}
+    AccessDeniedException: {}
+    ServiceUnavailableException: {}
+    InternalServerError: {}
+    DryRunOperation: {}
+    ThrottlingException: {}
+    ConfigurationId:
+      type: string
+      pattern: ^.{1,1600}$
+      minLength: 1
+      maxLength: 1600
+    UnauthorizedOperation: {}
+    ProgressUpdateStream:
+      type: string
+      pattern: '[^/:|\000-\037]+'
+      minLength: 1
+      maxLength: 50
+    HomeRegionNotSetException: {}
+    DisassociateDiscoveredResourceRequest:
+      type: object
+      required:
+      - ProgressUpdateStream
+      - MigrationTaskName
+      - ConfigurationId
+      title: DisassociateDiscoveredResourceRequest
+      properties:
+        ProgressUpdateStream:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: The name of the ProgressUpdateStream.
+        MigrationTaskName:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskName'
+          - description: 'The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> '
+        ConfigurationId:
+          allOf:
+          - $ref: '#/components/schemas/ConfigurationId'
+          - description: ConfigurationId of the Application Discovery Service resource to be disassociated.
+        DryRun:
+          allOf:
+          - $ref: '#/components/schemas/DryRun'
+          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
+    DryRun:
+      type: boolean
+    ResourceNotFoundException: {}
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/mgh/
+x-hasEquivalentPaths: true

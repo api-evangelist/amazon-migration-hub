@@ -1,0 +1,395 @@
+openapi: 3.0.0
+info:
+  version: 2017-05-31
+  x-release: v4
+  title: 'AWS Migration Hub #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.ListDiscoveredResources API'
+  description: <p>The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.</p> <p>Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home region.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: AWSMigrationHub
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/AWSMigrationHub-2017-05-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://mgh.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Migration Hub multi-region endpoint
+- url: https://mgh.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Migration Hub multi-region endpoint
+- url: http://mgh.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Migration Hub endpoint for China (Beijing) and China (Ningxia)
+- url: https://mgh.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Migration Hub endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSMigrationHub.ListDiscoveredResources'
+paths:
+  /#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ListDiscoveredResources
+      description: Lists discovered resources associated with the given <code>MigrationTask</code>.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDiscoveredResourcesResult'
+              examples:
+                ListDiscoveredResources200Example:
+                  summary: Default ListDiscoveredResources 200 response
+                  x-microcks-default: true
+                  value:
+                    NextToken: example-value
+                    DiscoveredResourceList: example-value
+        '480':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                ListDiscoveredResources480Example:
+                  summary: Default ListDiscoveredResources 480 response
+                  x-microcks-default: true
+                  value: {}
+        '481':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+              examples:
+                ListDiscoveredResources481Example:
+                  summary: Default ListDiscoveredResources 481 response
+                  x-microcks-default: true
+                  value: {}
+        '482':
+          description: InternalServerError
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+              examples:
+                ListDiscoveredResources482Example:
+                  summary: Default ListDiscoveredResources 482 response
+                  x-microcks-default: true
+                  value: {}
+        '483':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                ListDiscoveredResources483Example:
+                  summary: Default ListDiscoveredResources 483 response
+                  x-microcks-default: true
+                  value: {}
+        '484':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                ListDiscoveredResources484Example:
+                  summary: Default ListDiscoveredResources 484 response
+                  x-microcks-default: true
+                  value: {}
+        '485':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                ListDiscoveredResources485Example:
+                  summary: Default ListDiscoveredResources 485 response
+                  x-microcks-default: true
+                  value: {}
+        '486':
+          description: HomeRegionNotSetException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HomeRegionNotSetException'
+              examples:
+                ListDiscoveredResources486Example:
+                  summary: Default ListDiscoveredResources 486 response
+                  x-microcks-default: true
+                  value: {}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListDiscoveredResourcesRequest'
+      parameters:
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSMigrationHub.ListDiscoveredResources
+      summary: Amazon Migration Hub List Discovered Resources
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSMigrationHub.ListDiscoveredResources'
+components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    MigrationTaskName:
+      type: string
+      pattern: '[^:|]+'
+      minLength: 1
+      maxLength: 256
+    InvalidInputException: {}
+    DiscoveredResourceDescription:
+      type: string
+      pattern: ^.{0,500}$
+      minLength: 0
+      maxLength: 500
+    AccessDeniedException: {}
+    ServiceUnavailableException: {}
+    InternalServerError: {}
+    ThrottlingException: {}
+    ConfigurationId:
+      type: string
+      pattern: ^.{1,1600}$
+      minLength: 1
+      maxLength: 1600
+    ProgressUpdateStream:
+      type: string
+      pattern: '[^/:|\000-\037]+'
+      minLength: 1
+      maxLength: 50
+    HomeRegionNotSetException: {}
+    DiscoveredResourceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DiscoveredResource'
+    MaxResultsResources:
+      type: integer
+      minimum: 1
+      maximum: 10
+    DiscoveredResource:
+      type: object
+      required:
+      - ConfigurationId
+      properties:
+        ConfigurationId:
+          allOf:
+          - $ref: '#/components/schemas/ConfigurationId'
+          - description: The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/DiscoveredResourceDescription'
+          - description: A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.
+      description: Object representing the on-premises resource being migrated.
+    Token:
+      type: string
+      pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+      minLength: 0
+      maxLength: 2048
+    ResourceNotFoundException: {}
+    ListDiscoveredResourcesResult:
+      type: object
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.
+        DiscoveredResourceList:
+          allOf:
+          - $ref: '#/components/schemas/DiscoveredResourceList'
+          - description: Returned list of discovered resources associated with the given MigrationTask.
+    ListDiscoveredResourcesRequest:
+      type: object
+      required:
+      - ProgressUpdateStream
+      - MigrationTaskName
+      title: ListDiscoveredResourcesRequest
+      properties:
+        ProgressUpdateStream:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: The name of the ProgressUpdateStream.
+        MigrationTaskName:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskName'
+          - description: 'The name of the MigrationTask. <i>Do not store personal data in this field.</i> '
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResultsResources'
+          - description: The maximum number of results returned per page.
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/mgh/
+x-hasEquivalentPaths: true

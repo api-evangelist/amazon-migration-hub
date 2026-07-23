@@ -1,0 +1,402 @@
+openapi: 3.0.0
+info:
+  version: 2017-05-31
+  x-release: v4
+  title: 'AWS Migration Hub #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.PutResourceAttributes API'
+  description: <p>The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.</p> <p>Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home region.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: AWSMigrationHub
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/AWSMigrationHub-2017-05-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://mgh.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Migration Hub multi-region endpoint
+- url: https://mgh.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Migration Hub multi-region endpoint
+- url: http://mgh.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Migration Hub endpoint for China (Beijing) and China (Ningxia)
+- url: https://mgh.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Migration Hub endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSMigrationHub.PutResourceAttributes'
+paths:
+  /#X-Amz-Target=AWSMigrationHub.PutResourceAttributes:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: PutResourceAttributes
+      description: <p>Provides identifying details of the resource being migrated so that it can be associated in the Application Discovery Service repository. This association occurs asynchronously after <code>PutResourceAttributes</code> returns.</p> <important> <ul> <li> <p>Keep in mind that subsequent calls to PutResourceAttributes will override previously stored attributes. For example, if it is first called with a MAC address, but later, it is desired to <i>add</i> an IP address, it will then be required to call it with <i>both</i> the IP and MAC addresses to prevent overriding the MAC address.</p> </li> <li> <p>Note the instructions regarding the special use case of the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList"> <code>ResourceAttributeList</code> </a> parameter when specifying any "VM" related value.</p> </li> </ul> </important> <note> <p>Because this is an asynchronous call, it will always return 200, whether an association occurs or not. To confirm if an association was found based on the provided details, call <code>ListDiscoveredResources</code>.</p> </note>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutResourceAttributesResult'
+              examples:
+                PutResourceAttributes200Example:
+                  summary: Default PutResourceAttributes 200 response
+                  x-microcks-default: true
+                  value: {}
+        '480':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                PutResourceAttributes480Example:
+                  summary: Default PutResourceAttributes 480 response
+                  x-microcks-default: true
+                  value: {}
+        '481':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+              examples:
+                PutResourceAttributes481Example:
+                  summary: Default PutResourceAttributes 481 response
+                  x-microcks-default: true
+                  value: {}
+        '482':
+          description: InternalServerError
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+              examples:
+                PutResourceAttributes482Example:
+                  summary: Default PutResourceAttributes 482 response
+                  x-microcks-default: true
+                  value: {}
+        '483':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                PutResourceAttributes483Example:
+                  summary: Default PutResourceAttributes 483 response
+                  x-microcks-default: true
+                  value: {}
+        '484':
+          description: DryRunOperation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DryRunOperation'
+              examples:
+                PutResourceAttributes484Example:
+                  summary: Default PutResourceAttributes 484 response
+                  x-microcks-default: true
+                  value: {}
+        '485':
+          description: UnauthorizedOperation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedOperation'
+              examples:
+                PutResourceAttributes485Example:
+                  summary: Default PutResourceAttributes 485 response
+                  x-microcks-default: true
+                  value: {}
+        '486':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                PutResourceAttributes486Example:
+                  summary: Default PutResourceAttributes 486 response
+                  x-microcks-default: true
+                  value: {}
+        '487':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                PutResourceAttributes487Example:
+                  summary: Default PutResourceAttributes 487 response
+                  x-microcks-default: true
+                  value: {}
+        '488':
+          description: HomeRegionNotSetException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HomeRegionNotSetException'
+              examples:
+                PutResourceAttributes488Example:
+                  summary: Default PutResourceAttributes 488 response
+                  x-microcks-default: true
+                  value: {}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutResourceAttributesRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSMigrationHub.PutResourceAttributes
+      summary: Amazon Migration Hub Put Resource Attributes
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSMigrationHub.PutResourceAttributes'
+components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    MigrationTaskName:
+      type: string
+      pattern: '[^:|]+'
+      minLength: 1
+      maxLength: 256
+    InvalidInputException: {}
+    AccessDeniedException: {}
+    ServiceUnavailableException: {}
+    InternalServerError: {}
+    DryRunOperation: {}
+    ThrottlingException: {}
+    ResourceAttribute:
+      type: object
+      required:
+      - Type
+      - Value
+      properties:
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/ResourceAttributeType'
+          - description: Type of resource.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/ResourceAttributeValue'
+          - description: Value of the resource type.
+      description: '<p>Attribute associated with a resource.</p> <p>Note the corresponding format required per type listed below:</p> <dl> <dt>IPV4</dt> <dd> <p> <code>x.x.x.x</code> </p> <p> <i>where x is an integer in the range [0,255]</i> </p> </dd> <dt>IPV6</dt> <dd> <p> <code>y : y : y : y : y : y : y : y</code> </p> <p> <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i> </p> </dd> <dt>MAC_ADDRESS</dt> <dd> <p> <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</code> </p> </dd> <dt>FQDN</dt> <dd> <p> <code>^[^&lt;&gt;{}\\\\/?,=\\p{Cntrl}]{1,256}$</code> </p> </dd> </dl>'
+    UnauthorizedOperation: {}
+    ProgressUpdateStream:
+      type: string
+      pattern: '[^/:|\000-\037]+'
+      minLength: 1
+      maxLength: 50
+    HomeRegionNotSetException: {}
+    ResourceAttributeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResourceAttribute'
+      minItems: 1
+      maxItems: 100
+    PutResourceAttributesRequest:
+      type: object
+      required:
+      - ProgressUpdateStream
+      - MigrationTaskName
+      - ResourceAttributeList
+      title: PutResourceAttributesRequest
+      properties:
+        ProgressUpdateStream:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: 'The name of the ProgressUpdateStream. '
+        MigrationTaskName:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskName'
+          - description: 'Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> '
+        ResourceAttributeList:
+          allOf:
+          - $ref: '#/components/schemas/ResourceAttributeList'
+          - description: '<p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p> <note> <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p> </note> <important> <ul> <li> <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded and "VM" fields will not be used for matching the migration task to a server in Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related values.</p> </li> <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li> </ul> </important>'
+        DryRun:
+          allOf:
+          - $ref: '#/components/schemas/DryRun'
+          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
+    DryRun:
+      type: boolean
+    ResourceNotFoundException: {}
+    ResourceAttributeType:
+      type: string
+      enum:
+      - IPV4_ADDRESS
+      - IPV6_ADDRESS
+      - MAC_ADDRESS
+      - FQDN
+      - VM_MANAGER_ID
+      - VM_MANAGED_OBJECT_REFERENCE
+      - VM_NAME
+      - VM_PATH
+      - BIOS_ID
+      - MOTHERBOARD_SERIAL_NUMBER
+    PutResourceAttributesResult:
+      type: object
+      properties: {}
+    ResourceAttributeValue:
+      type: string
+      pattern: ^.{1,256}$
+      minLength: 1
+      maxLength: 256
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/mgh/
+x-hasEquivalentPaths: true

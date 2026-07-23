@@ -1,0 +1,433 @@
+openapi: 3.0.0
+info:
+  version: 2017-05-31
+  x-release: v4
+  title: 'AWS Migration Hub #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.DescribeMigrationTask API'
+  description: <p>The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.</p> <p>Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home region.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: AWSMigrationHub
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/AWSMigrationHub-2017-05-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://mgh.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Migration Hub multi-region endpoint
+- url: https://mgh.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Migration Hub multi-region endpoint
+- url: http://mgh.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Migration Hub endpoint for China (Beijing) and China (Ningxia)
+- url: https://mgh.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Migration Hub endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSMigrationHub.DescribeMigrationTask'
+paths:
+  /#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: DescribeMigrationTask
+      description: Retrieves a list of all attributes associated with a specific migration task.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeMigrationTaskResult'
+              examples:
+                DescribeMigrationTask200Example:
+                  summary: Default DescribeMigrationTask 200 response
+                  x-microcks-default: true
+                  value:
+                    MigrationTask: example-value
+        '480':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                DescribeMigrationTask480Example:
+                  summary: Default DescribeMigrationTask 480 response
+                  x-microcks-default: true
+                  value: {}
+        '481':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+              examples:
+                DescribeMigrationTask481Example:
+                  summary: Default DescribeMigrationTask 481 response
+                  x-microcks-default: true
+                  value: {}
+        '482':
+          description: InternalServerError
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+              examples:
+                DescribeMigrationTask482Example:
+                  summary: Default DescribeMigrationTask 482 response
+                  x-microcks-default: true
+                  value: {}
+        '483':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                DescribeMigrationTask483Example:
+                  summary: Default DescribeMigrationTask 483 response
+                  x-microcks-default: true
+                  value: {}
+        '484':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                DescribeMigrationTask484Example:
+                  summary: Default DescribeMigrationTask 484 response
+                  x-microcks-default: true
+                  value: {}
+        '485':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DescribeMigrationTask485Example:
+                  summary: Default DescribeMigrationTask 485 response
+                  x-microcks-default: true
+                  value: {}
+        '486':
+          description: HomeRegionNotSetException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HomeRegionNotSetException'
+              examples:
+                DescribeMigrationTask486Example:
+                  summary: Default DescribeMigrationTask 486 response
+                  x-microcks-default: true
+                  value: {}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DescribeMigrationTaskRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSMigrationHub.DescribeMigrationTask
+      summary: Amazon Migration Hub Describe Migration Task
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSMigrationHub.DescribeMigrationTask'
+components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    MigrationTaskName:
+      type: string
+      pattern: '[^:|]+'
+      minLength: 1
+      maxLength: 256
+    InvalidInputException: {}
+    UpdateDateTime:
+      type: string
+      format: date-time
+    AccessDeniedException: {}
+    ServiceUnavailableException: {}
+    ProgressPercent:
+      type: integer
+      minimum: 0
+      maximum: 100
+    InternalServerError: {}
+    MigrationTask:
+      type: object
+      properties:
+        ProgressUpdateStream:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: A name that identifies the vendor of the migration tool being used.
+        MigrationTaskName:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskName'
+          - description: 'Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> '
+        Task:
+          allOf:
+          - $ref: '#/components/schemas/Task'
+          - description: Task object encapsulating task information.
+        UpdateDateTime:
+          allOf:
+          - $ref: '#/components/schemas/UpdateDateTime'
+          - description: The timestamp when the task was gathered.
+        ResourceAttributeList:
+          allOf:
+          - $ref: '#/components/schemas/LatestResourceAttributeList'
+          - description: Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.
+      description: Represents a migration task in a migration tool.
+    ThrottlingException: {}
+    ResourceAttribute:
+      type: object
+      required:
+      - Type
+      - Value
+      properties:
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/ResourceAttributeType'
+          - description: Type of resource.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/ResourceAttributeValue'
+          - description: Value of the resource type.
+      description: '<p>Attribute associated with a resource.</p> <p>Note the corresponding format required per type listed below:</p> <dl> <dt>IPV4</dt> <dd> <p> <code>x.x.x.x</code> </p> <p> <i>where x is an integer in the range [0,255]</i> </p> </dd> <dt>IPV6</dt> <dd> <p> <code>y : y : y : y : y : y : y : y</code> </p> <p> <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i> </p> </dd> <dt>MAC_ADDRESS</dt> <dd> <p> <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</code> </p> </dd> <dt>FQDN</dt> <dd> <p> <code>^[^&lt;&gt;{}\\\\/?,=\\p{Cntrl}]{1,256}$</code> </p> </dd> </dl>'
+    Status:
+      type: string
+      enum:
+      - NOT_STARTED
+      - IN_PROGRESS
+      - FAILED
+      - COMPLETED
+    ProgressUpdateStream:
+      type: string
+      pattern: '[^/:|\000-\037]+'
+      minLength: 1
+      maxLength: 50
+    DescribeMigrationTaskRequest:
+      type: object
+      required:
+      - ProgressUpdateStream
+      - MigrationTaskName
+      title: DescribeMigrationTaskRequest
+      properties:
+        ProgressUpdateStream:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: 'The name of the ProgressUpdateStream. '
+        MigrationTaskName:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskName'
+          - description: 'The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> '
+    HomeRegionNotSetException: {}
+    LatestResourceAttributeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResourceAttribute'
+      minItems: 0
+      maxItems: 100
+    Task:
+      type: object
+      required:
+      - Status
+      properties:
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - description: Status of the task - Not Started, In-Progress, Complete.
+        StatusDetail:
+          allOf:
+          - $ref: '#/components/schemas/StatusDetail'
+          - description: Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.
+        ProgressPercent:
+          allOf:
+          - $ref: '#/components/schemas/ProgressPercent'
+          - description: Indication of the percentage completion of the task.
+      description: Task object encapsulating task information.
+    DescribeMigrationTaskResult:
+      type: object
+      properties:
+        MigrationTask:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTask'
+          - description: Object encapsulating information about the migration task.
+    ResourceNotFoundException: {}
+    ResourceAttributeType:
+      type: string
+      enum:
+      - IPV4_ADDRESS
+      - IPV6_ADDRESS
+      - MAC_ADDRESS
+      - FQDN
+      - VM_MANAGER_ID
+      - VM_MANAGED_OBJECT_REFERENCE
+      - VM_NAME
+      - VM_PATH
+      - BIOS_ID
+      - MOTHERBOARD_SERIAL_NUMBER
+    StatusDetail:
+      type: string
+      pattern: ^.{0,500}$
+      minLength: 0
+      maxLength: 500
+    ResourceAttributeValue:
+      type: string
+      pattern: ^.{1,256}$
+      minLength: 1
+      maxLength: 256
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/mgh/
+x-hasEquivalentPaths: true
