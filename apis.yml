@@ -3,7 +3,20 @@ name: Amazon Migration Hub
 description: AWS Migration Hub provides a single location to track the progress of application migrations across multiple
   AWS and partner solutions, giving visibility into migration progress and enabling the use of other AWS migration tools.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-migration-hub.png
 tags:
 - AWS
 - Broadcasting
@@ -14,21 +27,406 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: amazon-migration-hub:migration-hub-api
-  name: Amazon Migration Hub API
-  description: AWS Migration Hub provides a single location to track the progress of application migrations across multiple
-    AWS and partner solutions, giving visibility into migration progress and enabling the use of other AWS migration tools.
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-associatecreatedartifact-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.associatecreatedartifact.
   humanURL: https://aws.amazon.com/migration-hub/
   baseURL: http://mgh.{region}.amazonaws.com
   tags:
-  - Broadcasting
-  - Media Processing
-  - Media
+  - '#X Amz Target=AWSMigrationHub.AssociateCreatedArtifact'
   properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-associatecreatedartifact-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-associatediscoveredresource-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.AssociateDiscoveredResource API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.AssociateDiscoveredResource API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.associatediscoveredresource.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.AssociateDiscoveredResource'
+  properties:
   - type: OpenAPI
-    url: openapi/amazon-migration-hub-openapi-original.yml
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-associatediscoveredresource-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-createprogressupdatestream-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.CreateProgressUpdateStream API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.CreateProgressUpdateStream API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.createprogressupdatestream.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.CreateProgressUpdateStream'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-createprogressupdatestream-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-deleteprogressupdatestream-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.DeleteProgressUpdateStream API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.DeleteProgressUpdateStream API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.deleteprogressupdatestream.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.DeleteProgressUpdateStream'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-deleteprogressupdatestream-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-describeapplicationstate-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.DescribeApplicationState API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.DescribeApplicationState API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.describeapplicationstate.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.DescribeApplicationState'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-describeapplicationstate-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-describemigrationtask-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.DescribeMigrationTask API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.DescribeMigrationTask API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.describemigrationtask.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.DescribeMigrationTask'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-describemigrationtask-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-disassociatecreatedartifact-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.DisassociateCreatedArtifact API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.DisassociateCreatedArtifact API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.disassociatecreatedartifact.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.DisassociateCreatedArtifact'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-disassociatecreatedartifact-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-disassociatediscoveredresource-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.DisassociateDiscoveredResource API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.DisassociateDiscoveredResource API from Amazon Migration Hub — 1
+    operation(s) for #x amz target=awsmigrationhub.disassociatediscoveredresource.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.DisassociateDiscoveredResource'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-disassociatediscoveredresource-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-importmigrationtask-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.ImportMigrationTask API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.ImportMigrationTask API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.importmigrationtask.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.ImportMigrationTask'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-importmigrationtask-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-listapplicationstates-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.ListApplicationStates API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.ListApplicationStates API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.listapplicationstates.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.ListApplicationStates'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-listapplicationstates-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-listcreatedartifacts-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.ListCreatedArtifacts API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.ListCreatedArtifacts API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.listcreatedartifacts.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.ListCreatedArtifacts'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-listcreatedartifacts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-listdiscoveredresources-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.ListDiscoveredResources API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.ListDiscoveredResources API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.listdiscoveredresources.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.ListDiscoveredResources'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-listdiscoveredresources-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-listmigrationtasks-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.ListMigrationTasks API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.ListMigrationTasks API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.listmigrationtasks.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.ListMigrationTasks'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-listmigrationtasks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-listprogressupdatestreams-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.ListProgressUpdateStreams API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.ListProgressUpdateStreams API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.listprogressupdatestreams.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.ListProgressUpdateStreams'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-listprogressupdatestreams-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-notifyapplicationstate-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.NotifyApplicationState API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.NotifyApplicationState API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.notifyapplicationstate.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.NotifyApplicationState'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-notifyapplicationstate-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-notifymigrationtaskstate-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.NotifyMigrationTaskState API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.NotifyMigrationTaskState API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.notifymigrationtaskstate.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.NotifyMigrationTaskState'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-notifymigrationtaskstate-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
+  - type: GettingStarted
+    url: https://aws.amazon.com/migration-hub/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/migration-hub/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/migration-hub/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-migration-hub.yaml
+- aid: >-
+    amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-putresourceattributes-api
+  name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.PutResourceAttributes API'
+  description: >-
+    The #X Amz Target=AWSMigrationHub.PutResourceAttributes API from Amazon Migration Hub — 1 operation(s)
+    for #x amz target=awsmigrationhub.putresourceattributes.
+  humanURL: https://aws.amazon.com/migration-hub/
+  baseURL: http://mgh.{region}.amazonaws.com
+  tags:
+  - '#X Amz Target=AWSMigrationHub.PutResourceAttributes'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-putresourceattributes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/migration-hub/
   - type: GettingStarted
     url: https://aws.amazon.com/migration-hub/getting-started/
   - type: Pricing
@@ -38,6 +436,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-migration-hub.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-migration-hub/overview
 - type: AgenticAccess
   url: agentic-access/amazon-migration-hub-agentic-access.yml
 - type: TrustCenter
