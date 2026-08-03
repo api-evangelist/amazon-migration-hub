@@ -1,0 +1,946 @@
+{
+  "info": {
+    "_postman_id": "c146907d-eef8-4e2c-9308-815caed7af62",
+    "name": "AWS Migration Hub #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.ListDiscoveredResources API",
+    "description": "<p>The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.</p> <p>Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home region.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:40:40.000Z",
+    "updatedAt": "2026-07-28T10:40:40.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c146907d-eef8-4e2c-9308-815caed7af62"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources",
+      "item": [
+        {
+          "name": "Amazon Migration Hub List Discovered Resources",
+          "id": "7e5dc7cd-b46a-4821-9267-a77f3da4e584",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSMigrationHub.ListDiscoveredResources"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ProgressUpdateStream\": \"-Gmd\",\n  \"MigrationTaskName\": \".+TuXb>\",\n  \"NextToken\": \"QL5gcnJp/XMlBb59Fc86wiw0wwLlP4fnSZWmvHgw86rinLhUuXx4sti1XY1dXefd60maKXKyOB1U/OJppp3T9mwQAw7P7CWJ/298pzipQOxt2Te9ejW7BPMg2=+t7o8euoObroxu0O/1JG9tIQTeBpRkp9Z4attHP06otSYqES+czpM0/eY=5LuPkc+ZXYPplgvj9rcSj5oCLsCvz17P0dGqxFpLBywiQ+J/64kWf8xwSZwDMjuPEEwQsZPOYr+R\",\n  \"MaxResults\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AWSMigrationHub.ListDiscoveredResources"
+            },
+            "description": "Lists discovered resources associated with the given <code>MigrationTask</code>."
+          },
+          "response": [
+            {
+              "id": "b051fbcb-4b4d-44e5-b00e-5d393075e3bd",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.ListDiscoveredResources"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"-Gmd\",\n  \"MigrationTaskName\": \".+TuXb>\",\n  \"NextToken\": \"QL5gcnJp/XMlBb59Fc86wiw0wwLlP4fnSZWmvHgw86rinLhUuXx4sti1XY1dXefd60maKXKyOB1U/OJppp3T9mwQAw7P7CWJ/298pzipQOxt2Te9ejW7BPMg2=+t7o8euoObroxu0O/1JG9tIQTeBpRkp9Z4attHP06otSYqES+czpM0/eY=5LuPkc+ZXYPplgvj9rcSj5oCLsCvz17P0dGqxFpLBywiQ+J/64kWf8xwSZwDMjuPEEwQsZPOYr+R\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.ListDiscoveredResources"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"NextToken\": \"eBGOJ/WP+UYMHRAXXWv6/Fu+7j0J5iG/Nx9OqmfISRgOoZ=JZBFN0FH8cVYiHUfBq2aRSp+ghf1cya9Ir=w7jVhjvI1tOoM3CltahCC=cc9XNPTYv=YUWPb5LYTGg6RX=5M1tey2NMQZ8uRbaBw6Uj2jn7iqJ8oC25L54Vzv0O3hl8=TA9bxGDy3C7DN6yPy9fYUp60I14axY6ofH2iZZTuVQwcfmWs8yL+BXDspz4TzRawtjvpLuZc/RWDmfvQW\",\n  \"DiscoveredResourceList\": [\n    {\n      \"ConfigurationId\": \"^.P@jp<-~5%2\\\\fqXh`bR]FkLB&V-4|$E'B*`COM$QR q_JCsL7(+|\\\\W:L2c7p`gt2H^}Av/zJu S`&1i<V*4+0F+F2ULYLzH^gpnEz_JB+[Oft qEDNInID@5nkrHP\\\"*M}2}<#{+g\\\\hVpE{>W1-_z?\\\"F!d\\\\=yMrZ%<PypejO<=-hDsCNm&:D]~KFz/w,M[/'^rWlTZL:/M,R+SH<\\\"2~,p)<MyZss<G6V`U#%/a@x%A]%o$arf.P68VvDX,9pf,`E\",\n      \"Description\": \"sOmbHXlJp#T7^2p7|odI/5)iyYIcy~<Q#%HbO:_\\\\xE-IkfAmto`w60TE[tV)n) c x4/}7~?NY/IH}aTE]BOOnQTd 4siUv=ByN%v4%)JuhdjLrUaGLA/a`RHoFS%?!ti?7%^+^a%X<xH'>NiX&DL*Lt&B!AaU9Py]g0\\\\-id+*mdUz$;N+ZCq@f5nATC,C6O??nxp6,8$to|vh-FX=]>6&i|`bt-6DLEaR&~OqA|3J*(GRF4#QNgg_AAMq<0pDL#\"\n    },\n    {\n      \"ConfigurationId\": \"ENqqh*mRO??G@ji e}E?LX*!A\\\\_Sb|4PJ%5D%%CO!pN#R`vUcmccPqpO}dZa?^fwf2{]8TN\\\"uvev/Q*),cO9:swK%SH5L%\\\\^Q&tGQ@?n)W=U:.8\\\\iKT3C&Cm6Y4|] 2^$w~~pO65Z2}Twq.D@mSjSm+~sc.X}eZT]Bna\",\n      \"Description\": \"C&:94?pfgKq!D\\\"V76HF?8.mi0o)\\\\5Hw37,?X1}\\\\GxAfyfk4Tbu%(D,Ns3t':?Hn/SK9'~)d(ibUFg`P'29r<;6%Kk]mcg(n0c&T#J}w#?6@=fT>?N3N>TG3md*Lp}gShwjkT{uhM.hY-54b!^[;%l-F(>*uStshMDnVqkNnA+4AS_C_j\\\\RBv-F?Uwt:+7AV-5E$6G}c>W0D|ed52)3nthlJ(g%%Pn4\\\"T#-N?]Z* 9@ty0QrdO8rNSqxK-UH4+shC\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:40:41.000Z",
+              "updatedAt": "2026-07-28T10:40:41.000Z",
+              "uid": "35240-b051fbcb-4b4d-44e5-b00e-5d393075e3bd"
+            },
+            {
+              "id": "d3d34e52-102b-4977-b626-100941116e4a",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.ListDiscoveredResources"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"-Gmd\",\n  \"MigrationTaskName\": \".+TuXb>\",\n  \"NextToken\": \"QL5gcnJp/XMlBb59Fc86wiw0wwLlP4fnSZWmvHgw86rinLhUuXx4sti1XY1dXefd60maKXKyOB1U/OJppp3T9mwQAw7P7CWJ/298pzipQOxt2Te9ejW7BPMg2=+t7o8euoObroxu0O/1JG9tIQTeBpRkp9Z4attHP06otSYqES+czpM0/eY=5LuPkc+ZXYPplgvj9rcSj5oCLsCvz17P0dGqxFpLBywiQ+J/64kWf8xwSZwDMjuPEEwQsZPOYr+R\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.ListDiscoveredResources"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:41.000Z",
+              "updatedAt": "2026-07-28T10:40:41.000Z",
+              "uid": "35240-d3d34e52-102b-4977-b626-100941116e4a"
+            },
+            {
+              "id": "6fcdb0e3-9a33-4837-a03c-fa2d36bac632",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.ListDiscoveredResources"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"-Gmd\",\n  \"MigrationTaskName\": \".+TuXb>\",\n  \"NextToken\": \"QL5gcnJp/XMlBb59Fc86wiw0wwLlP4fnSZWmvHgw86rinLhUuXx4sti1XY1dXefd60maKXKyOB1U/OJppp3T9mwQAw7P7CWJ/298pzipQOxt2Te9ejW7BPMg2=+t7o8euoObroxu0O/1JG9tIQTeBpRkp9Z4attHP06otSYqES+czpM0/eY=5LuPkc+ZXYPplgvj9rcSj5oCLsCvz17P0dGqxFpLBywiQ+J/64kWf8xwSZwDMjuPEEwQsZPOYr+R\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.ListDiscoveredResources"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:41.000Z",
+              "updatedAt": "2026-07-28T10:40:41.000Z",
+              "uid": "35240-6fcdb0e3-9a33-4837-a03c-fa2d36bac632"
+            },
+            {
+              "id": "671086d6-428d-454e-9d89-5ab385d02a3a",
+              "name": "InternalServerError",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.ListDiscoveredResources"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"-Gmd\",\n  \"MigrationTaskName\": \".+TuXb>\",\n  \"NextToken\": \"QL5gcnJp/XMlBb59Fc86wiw0wwLlP4fnSZWmvHgw86rinLhUuXx4sti1XY1dXefd60maKXKyOB1U/OJppp3T9mwQAw7P7CWJ/298pzipQOxt2Te9ejW7BPMg2=+t7o8euoObroxu0O/1JG9tIQTeBpRkp9Z4attHP06otSYqES+czpM0/eY=5LuPkc+ZXYPplgvj9rcSj5oCLsCvz17P0dGqxFpLBywiQ+J/64kWf8xwSZwDMjuPEEwQsZPOYr+R\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.ListDiscoveredResources"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:41.000Z",
+              "updatedAt": "2026-07-28T10:40:41.000Z",
+              "uid": "35240-671086d6-428d-454e-9d89-5ab385d02a3a"
+            },
+            {
+              "id": "8abae1ab-5972-482f-955f-f37852edbd53",
+              "name": "ServiceUnavailableException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.ListDiscoveredResources"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"-Gmd\",\n  \"MigrationTaskName\": \".+TuXb>\",\n  \"NextToken\": \"QL5gcnJp/XMlBb59Fc86wiw0wwLlP4fnSZWmvHgw86rinLhUuXx4sti1XY1dXefd60maKXKyOB1U/OJppp3T9mwQAw7P7CWJ/298pzipQOxt2Te9ejW7BPMg2=+t7o8euoObroxu0O/1JG9tIQTeBpRkp9Z4attHP06otSYqES+czpM0/eY=5LuPkc+ZXYPplgvj9rcSj5oCLsCvz17P0dGqxFpLBywiQ+J/64kWf8xwSZwDMjuPEEwQsZPOYr+R\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.ListDiscoveredResources"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:41.000Z",
+              "updatedAt": "2026-07-28T10:40:41.000Z",
+              "uid": "35240-8abae1ab-5972-482f-955f-f37852edbd53"
+            },
+            {
+              "id": "257a2662-aeb4-4858-8f25-859d103310c2",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.ListDiscoveredResources"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"-Gmd\",\n  \"MigrationTaskName\": \".+TuXb>\",\n  \"NextToken\": \"QL5gcnJp/XMlBb59Fc86wiw0wwLlP4fnSZWmvHgw86rinLhUuXx4sti1XY1dXefd60maKXKyOB1U/OJppp3T9mwQAw7P7CWJ/298pzipQOxt2Te9ejW7BPMg2=+t7o8euoObroxu0O/1JG9tIQTeBpRkp9Z4attHP06otSYqES+czpM0/eY=5LuPkc+ZXYPplgvj9rcSj5oCLsCvz17P0dGqxFpLBywiQ+J/64kWf8xwSZwDMjuPEEwQsZPOYr+R\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.ListDiscoveredResources"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:41.000Z",
+              "updatedAt": "2026-07-28T10:40:41.000Z",
+              "uid": "35240-257a2662-aeb4-4858-8f25-859d103310c2"
+            },
+            {
+              "id": "b86e3b27-98a4-448e-a5d2-398dcff8c9ff",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.ListDiscoveredResources"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"-Gmd\",\n  \"MigrationTaskName\": \".+TuXb>\",\n  \"NextToken\": \"QL5gcnJp/XMlBb59Fc86wiw0wwLlP4fnSZWmvHgw86rinLhUuXx4sti1XY1dXefd60maKXKyOB1U/OJppp3T9mwQAw7P7CWJ/298pzipQOxt2Te9ejW7BPMg2=+t7o8euoObroxu0O/1JG9tIQTeBpRkp9Z4attHP06otSYqES+czpM0/eY=5LuPkc+ZXYPplgvj9rcSj5oCLsCvz17P0dGqxFpLBywiQ+J/64kWf8xwSZwDMjuPEEwQsZPOYr+R\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.ListDiscoveredResources"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:41.000Z",
+              "updatedAt": "2026-07-28T10:40:41.000Z",
+              "uid": "35240-b86e3b27-98a4-448e-a5d2-398dcff8c9ff"
+            },
+            {
+              "id": "23dcd592-bbd4-4814-9c2e-96f6cb394b1c",
+              "name": "HomeRegionNotSetException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.ListDiscoveredResources"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"-Gmd\",\n  \"MigrationTaskName\": \".+TuXb>\",\n  \"NextToken\": \"QL5gcnJp/XMlBb59Fc86wiw0wwLlP4fnSZWmvHgw86rinLhUuXx4sti1XY1dXefd60maKXKyOB1U/OJppp3T9mwQAw7P7CWJ/298pzipQOxt2Te9ejW7BPMg2=+t7o8euoObroxu0O/1JG9tIQTeBpRkp9Z4attHP06otSYqES+czpM0/eY=5LuPkc+ZXYPplgvj9rcSj5oCLsCvz17P0dGqxFpLBywiQ+J/64kWf8xwSZwDMjuPEEwQsZPOYr+R\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListDiscoveredResources",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.ListDiscoveredResources"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:41.000Z",
+              "updatedAt": "2026-07-28T10:40:41.000Z",
+              "uid": "35240-23dcd592-bbd4-4814-9c2e-96f6cb394b1c"
+            }
+          ],
+          "createdAt": "2026-07-28T10:40:41.000Z",
+          "updatedAt": "2026-07-28T10:40:41.000Z",
+          "uid": "35240-7e5dc7cd-b46a-4821-9267-a77f3da4e584"
+        }
+      ],
+      "id": "f4f2e18c-8fef-40fc-a603-e0b9f9275b46",
+      "createdAt": "2026-07-28T10:40:41.000Z",
+      "updatedAt": "2026-07-28T10:40:41.000Z",
+      "uid": "35240-f4f2e18c-8fef-40fc-a603-e0b9f9275b46"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://mgh.{{region}}.amazonaws.com"
+    }
+  ]
+}

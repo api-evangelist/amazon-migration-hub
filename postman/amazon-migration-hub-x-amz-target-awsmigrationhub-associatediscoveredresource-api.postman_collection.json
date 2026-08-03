@@ -1,0 +1,1102 @@
+{
+  "info": {
+    "_postman_id": "af4eca5d-4b31-40e8-a65b-7068b9a4ad1d",
+    "name": "AWS Migration Hub #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateDiscoveredResource API",
+    "description": "<p>The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.</p> <p>Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home region.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:40:05.000Z",
+    "updatedAt": "2026-07-28T10:40:05.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-af4eca5d-4b31-40e8-a65b-7068b9a4ad1d"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
+      "item": [
+        {
+          "name": "Amazon Migration Hub Associate Discovered Resource",
+          "id": "9824d0e9-907a-4664-b006-69c8cf7c7d0f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSMigrationHub.AssociateDiscoveredResource"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ProgressUpdateStream\": \"W\",\n  \"MigrationTaskName\": \"O<[Jwd\",\n  \"DiscoveredResource\": {\n    \"ConfigurationId\": \"vrB4I4qW&n]f$;Wu>q<uB5]n};bRF!7h5c?,|4 D?T(~0$5#-~b&va&a7|2;4s-x)#XnGK6QV}?zREqDv#,GB<ph0Kl8x*`.u=GZ^t|n-OGYn`#vP)(//^ZfUTzAU_|z#nf& D bHgu*1$/Z?8W\\\\kON+@Dh3\\\\J0pOd%UZ\\\"nCT[6?x[Gs6gfrE.IW0=#b`#1pL_:0{pt,e(ho')nkHeQ;O|k@Gw[=Go'INoIwCys]do1Ce#H'OX[hr(l/@wx@jVIr\",\n    \"Description\": \"aDm- <m_SzWCG}'7^PiYHX<mE5K2(r;:lQ~F4j]WogGKw^J2F|aVvn|W/V!IP0b9O#xWqkI^3tkZ>sff:N:-TRanc>)G[s b*l|mxTF88]j@i@1|(~h2P$-jWS{!;&'d4QB6.>3Jz0m=l\"\n  },\n  \"DryRun\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource"
+            },
+            "description": "Associates a discovered resource ID from Application Discovery Service with a migration task."
+          },
+          "response": [
+            {
+              "id": "6944fd92-a1e1-4288-943d-0f0c7f02668f",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.AssociateDiscoveredResource"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"W\",\n  \"MigrationTaskName\": \"O<[Jwd\",\n  \"DiscoveredResource\": {\n    \"ConfigurationId\": \"vrB4I4qW&n]f$;Wu>q<uB5]n};bRF!7h5c?,|4 D?T(~0$5#-~b&va&a7|2;4s-x)#XnGK6QV}?zREqDv#,GB<ph0Kl8x*`.u=GZ^t|n-OGYn`#vP)(//^ZfUTzAU_|z#nf& D bHgu*1$/Z?8W\\\\kON+@Dh3\\\\J0pOd%UZ\\\"nCT[6?x[Gs6gfrE.IW0=#b`#1pL_:0{pt,e(ho')nkHeQ;O|k@Gw[=Go'INoIwCys]do1Ce#H'OX[hr(l/@wx@jVIr\",\n    \"Description\": \"aDm- <m_SzWCG}'7^PiYHX<mE5K2(r;:lQ~F4j]WogGKw^J2F|aVvn|W/V!IP0b9O#xWqkI^3tkZ>sff:N:-TRanc>)G[s b*l|mxTF88]j@i@1|(~h2P$-jWS{!;&'d4QB6.>3Jz0m=l\"\n  },\n  \"DryRun\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:05.000Z",
+              "updatedAt": "2026-07-28T10:40:05.000Z",
+              "uid": "35240-6944fd92-a1e1-4288-943d-0f0c7f02668f"
+            },
+            {
+              "id": "ee36409d-ee7d-4c09-acbf-395ed1da9b98",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.AssociateDiscoveredResource"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"W\",\n  \"MigrationTaskName\": \"O<[Jwd\",\n  \"DiscoveredResource\": {\n    \"ConfigurationId\": \"vrB4I4qW&n]f$;Wu>q<uB5]n};bRF!7h5c?,|4 D?T(~0$5#-~b&va&a7|2;4s-x)#XnGK6QV}?zREqDv#,GB<ph0Kl8x*`.u=GZ^t|n-OGYn`#vP)(//^ZfUTzAU_|z#nf& D bHgu*1$/Z?8W\\\\kON+@Dh3\\\\J0pOd%UZ\\\"nCT[6?x[Gs6gfrE.IW0=#b`#1pL_:0{pt,e(ho')nkHeQ;O|k@Gw[=Go'INoIwCys]do1Ce#H'OX[hr(l/@wx@jVIr\",\n    \"Description\": \"aDm- <m_SzWCG}'7^PiYHX<mE5K2(r;:lQ~F4j]WogGKw^J2F|aVvn|W/V!IP0b9O#xWqkI^3tkZ>sff:N:-TRanc>)G[s b*l|mxTF88]j@i@1|(~h2P$-jWS{!;&'d4QB6.>3Jz0m=l\"\n  },\n  \"DryRun\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:05.000Z",
+              "updatedAt": "2026-07-28T10:40:05.000Z",
+              "uid": "35240-ee36409d-ee7d-4c09-acbf-395ed1da9b98"
+            },
+            {
+              "id": "c368b3a9-b286-4c1f-a436-8c9e38a5b61e",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.AssociateDiscoveredResource"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"W\",\n  \"MigrationTaskName\": \"O<[Jwd\",\n  \"DiscoveredResource\": {\n    \"ConfigurationId\": \"vrB4I4qW&n]f$;Wu>q<uB5]n};bRF!7h5c?,|4 D?T(~0$5#-~b&va&a7|2;4s-x)#XnGK6QV}?zREqDv#,GB<ph0Kl8x*`.u=GZ^t|n-OGYn`#vP)(//^ZfUTzAU_|z#nf& D bHgu*1$/Z?8W\\\\kON+@Dh3\\\\J0pOd%UZ\\\"nCT[6?x[Gs6gfrE.IW0=#b`#1pL_:0{pt,e(ho')nkHeQ;O|k@Gw[=Go'INoIwCys]do1Ce#H'OX[hr(l/@wx@jVIr\",\n    \"Description\": \"aDm- <m_SzWCG}'7^PiYHX<mE5K2(r;:lQ~F4j]WogGKw^J2F|aVvn|W/V!IP0b9O#xWqkI^3tkZ>sff:N:-TRanc>)G[s b*l|mxTF88]j@i@1|(~h2P$-jWS{!;&'d4QB6.>3Jz0m=l\"\n  },\n  \"DryRun\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:05.000Z",
+              "updatedAt": "2026-07-28T10:40:05.000Z",
+              "uid": "35240-c368b3a9-b286-4c1f-a436-8c9e38a5b61e"
+            },
+            {
+              "id": "a5b8ff03-7c2d-47b2-b4e1-3c55fdbe6d93",
+              "name": "InternalServerError",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.AssociateDiscoveredResource"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"W\",\n  \"MigrationTaskName\": \"O<[Jwd\",\n  \"DiscoveredResource\": {\n    \"ConfigurationId\": \"vrB4I4qW&n]f$;Wu>q<uB5]n};bRF!7h5c?,|4 D?T(~0$5#-~b&va&a7|2;4s-x)#XnGK6QV}?zREqDv#,GB<ph0Kl8x*`.u=GZ^t|n-OGYn`#vP)(//^ZfUTzAU_|z#nf& D bHgu*1$/Z?8W\\\\kON+@Dh3\\\\J0pOd%UZ\\\"nCT[6?x[Gs6gfrE.IW0=#b`#1pL_:0{pt,e(ho')nkHeQ;O|k@Gw[=Go'INoIwCys]do1Ce#H'OX[hr(l/@wx@jVIr\",\n    \"Description\": \"aDm- <m_SzWCG}'7^PiYHX<mE5K2(r;:lQ~F4j]WogGKw^J2F|aVvn|W/V!IP0b9O#xWqkI^3tkZ>sff:N:-TRanc>)G[s b*l|mxTF88]j@i@1|(~h2P$-jWS{!;&'d4QB6.>3Jz0m=l\"\n  },\n  \"DryRun\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:05.000Z",
+              "updatedAt": "2026-07-28T10:40:05.000Z",
+              "uid": "35240-a5b8ff03-7c2d-47b2-b4e1-3c55fdbe6d93"
+            },
+            {
+              "id": "05a14b56-7419-4ad1-94eb-2116afcf1d60",
+              "name": "ServiceUnavailableException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.AssociateDiscoveredResource"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"W\",\n  \"MigrationTaskName\": \"O<[Jwd\",\n  \"DiscoveredResource\": {\n    \"ConfigurationId\": \"vrB4I4qW&n]f$;Wu>q<uB5]n};bRF!7h5c?,|4 D?T(~0$5#-~b&va&a7|2;4s-x)#XnGK6QV}?zREqDv#,GB<ph0Kl8x*`.u=GZ^t|n-OGYn`#vP)(//^ZfUTzAU_|z#nf& D bHgu*1$/Z?8W\\\\kON+@Dh3\\\\J0pOd%UZ\\\"nCT[6?x[Gs6gfrE.IW0=#b`#1pL_:0{pt,e(ho')nkHeQ;O|k@Gw[=Go'INoIwCys]do1Ce#H'OX[hr(l/@wx@jVIr\",\n    \"Description\": \"aDm- <m_SzWCG}'7^PiYHX<mE5K2(r;:lQ~F4j]WogGKw^J2F|aVvn|W/V!IP0b9O#xWqkI^3tkZ>sff:N:-TRanc>)G[s b*l|mxTF88]j@i@1|(~h2P$-jWS{!;&'d4QB6.>3Jz0m=l\"\n  },\n  \"DryRun\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:05.000Z",
+              "updatedAt": "2026-07-28T10:40:05.000Z",
+              "uid": "35240-05a14b56-7419-4ad1-94eb-2116afcf1d60"
+            },
+            {
+              "id": "4ce880e1-4404-410a-91ed-68a3c0c41f7a",
+              "name": "DryRunOperation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.AssociateDiscoveredResource"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"W\",\n  \"MigrationTaskName\": \"O<[Jwd\",\n  \"DiscoveredResource\": {\n    \"ConfigurationId\": \"vrB4I4qW&n]f$;Wu>q<uB5]n};bRF!7h5c?,|4 D?T(~0$5#-~b&va&a7|2;4s-x)#XnGK6QV}?zREqDv#,GB<ph0Kl8x*`.u=GZ^t|n-OGYn`#vP)(//^ZfUTzAU_|z#nf& D bHgu*1$/Z?8W\\\\kON+@Dh3\\\\J0pOd%UZ\\\"nCT[6?x[Gs6gfrE.IW0=#b`#1pL_:0{pt,e(ho')nkHeQ;O|k@Gw[=Go'INoIwCys]do1Ce#H'OX[hr(l/@wx@jVIr\",\n    \"Description\": \"aDm- <m_SzWCG}'7^PiYHX<mE5K2(r;:lQ~F4j]WogGKw^J2F|aVvn|W/V!IP0b9O#xWqkI^3tkZ>sff:N:-TRanc>)G[s b*l|mxTF88]j@i@1|(~h2P$-jWS{!;&'d4QB6.>3Jz0m=l\"\n  },\n  \"DryRun\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:05.000Z",
+              "updatedAt": "2026-07-28T10:40:05.000Z",
+              "uid": "35240-4ce880e1-4404-410a-91ed-68a3c0c41f7a"
+            },
+            {
+              "id": "d641095c-5ae2-4ba1-a641-a9dd0dcf7831",
+              "name": "UnauthorizedOperation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.AssociateDiscoveredResource"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"W\",\n  \"MigrationTaskName\": \"O<[Jwd\",\n  \"DiscoveredResource\": {\n    \"ConfigurationId\": \"vrB4I4qW&n]f$;Wu>q<uB5]n};bRF!7h5c?,|4 D?T(~0$5#-~b&va&a7|2;4s-x)#XnGK6QV}?zREqDv#,GB<ph0Kl8x*`.u=GZ^t|n-OGYn`#vP)(//^ZfUTzAU_|z#nf& D bHgu*1$/Z?8W\\\\kON+@Dh3\\\\J0pOd%UZ\\\"nCT[6?x[Gs6gfrE.IW0=#b`#1pL_:0{pt,e(ho')nkHeQ;O|k@Gw[=Go'INoIwCys]do1Ce#H'OX[hr(l/@wx@jVIr\",\n    \"Description\": \"aDm- <m_SzWCG}'7^PiYHX<mE5K2(r;:lQ~F4j]WogGKw^J2F|aVvn|W/V!IP0b9O#xWqkI^3tkZ>sff:N:-TRanc>)G[s b*l|mxTF88]j@i@1|(~h2P$-jWS{!;&'d4QB6.>3Jz0m=l\"\n  },\n  \"DryRun\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:05.000Z",
+              "updatedAt": "2026-07-28T10:40:05.000Z",
+              "uid": "35240-d641095c-5ae2-4ba1-a641-a9dd0dcf7831"
+            },
+            {
+              "id": "7233f83f-e7f6-49ce-8e40-a279af1a61d4",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.AssociateDiscoveredResource"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"W\",\n  \"MigrationTaskName\": \"O<[Jwd\",\n  \"DiscoveredResource\": {\n    \"ConfigurationId\": \"vrB4I4qW&n]f$;Wu>q<uB5]n};bRF!7h5c?,|4 D?T(~0$5#-~b&va&a7|2;4s-x)#XnGK6QV}?zREqDv#,GB<ph0Kl8x*`.u=GZ^t|n-OGYn`#vP)(//^ZfUTzAU_|z#nf& D bHgu*1$/Z?8W\\\\kON+@Dh3\\\\J0pOd%UZ\\\"nCT[6?x[Gs6gfrE.IW0=#b`#1pL_:0{pt,e(ho')nkHeQ;O|k@Gw[=Go'INoIwCys]do1Ce#H'OX[hr(l/@wx@jVIr\",\n    \"Description\": \"aDm- <m_SzWCG}'7^PiYHX<mE5K2(r;:lQ~F4j]WogGKw^J2F|aVvn|W/V!IP0b9O#xWqkI^3tkZ>sff:N:-TRanc>)G[s b*l|mxTF88]j@i@1|(~h2P$-jWS{!;&'d4QB6.>3Jz0m=l\"\n  },\n  \"DryRun\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:05.000Z",
+              "updatedAt": "2026-07-28T10:40:05.000Z",
+              "uid": "35240-7233f83f-e7f6-49ce-8e40-a279af1a61d4"
+            },
+            {
+              "id": "a2d42a8e-26b6-469e-a814-e3e55a6ab3f9",
+              "name": "PolicyErrorException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.AssociateDiscoveredResource"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"W\",\n  \"MigrationTaskName\": \"O<[Jwd\",\n  \"DiscoveredResource\": {\n    \"ConfigurationId\": \"vrB4I4qW&n]f$;Wu>q<uB5]n};bRF!7h5c?,|4 D?T(~0$5#-~b&va&a7|2;4s-x)#XnGK6QV}?zREqDv#,GB<ph0Kl8x*`.u=GZ^t|n-OGYn`#vP)(//^ZfUTzAU_|z#nf& D bHgu*1$/Z?8W\\\\kON+@Dh3\\\\J0pOd%UZ\\\"nCT[6?x[Gs6gfrE.IW0=#b`#1pL_:0{pt,e(ho')nkHeQ;O|k@Gw[=Go'INoIwCys]do1Ce#H'OX[hr(l/@wx@jVIr\",\n    \"Description\": \"aDm- <m_SzWCG}'7^PiYHX<mE5K2(r;:lQ~F4j]WogGKw^J2F|aVvn|W/V!IP0b9O#xWqkI^3tkZ>sff:N:-TRanc>)G[s b*l|mxTF88]j@i@1|(~h2P$-jWS{!;&'d4QB6.>3Jz0m=l\"\n  },\n  \"DryRun\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:05.000Z",
+              "updatedAt": "2026-07-28T10:40:05.000Z",
+              "uid": "35240-a2d42a8e-26b6-469e-a814-e3e55a6ab3f9"
+            },
+            {
+              "id": "9eccbf29-3610-43b7-a815-379c4b765442",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.AssociateDiscoveredResource"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"W\",\n  \"MigrationTaskName\": \"O<[Jwd\",\n  \"DiscoveredResource\": {\n    \"ConfigurationId\": \"vrB4I4qW&n]f$;Wu>q<uB5]n};bRF!7h5c?,|4 D?T(~0$5#-~b&va&a7|2;4s-x)#XnGK6QV}?zREqDv#,GB<ph0Kl8x*`.u=GZ^t|n-OGYn`#vP)(//^ZfUTzAU_|z#nf& D bHgu*1$/Z?8W\\\\kON+@Dh3\\\\J0pOd%UZ\\\"nCT[6?x[Gs6gfrE.IW0=#b`#1pL_:0{pt,e(ho')nkHeQ;O|k@Gw[=Go'INoIwCys]do1Ce#H'OX[hr(l/@wx@jVIr\",\n    \"Description\": \"aDm- <m_SzWCG}'7^PiYHX<mE5K2(r;:lQ~F4j]WogGKw^J2F|aVvn|W/V!IP0b9O#xWqkI^3tkZ>sff:N:-TRanc>)G[s b*l|mxTF88]j@i@1|(~h2P$-jWS{!;&'d4QB6.>3Jz0m=l\"\n  },\n  \"DryRun\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:05.000Z",
+              "updatedAt": "2026-07-28T10:40:05.000Z",
+              "uid": "35240-9eccbf29-3610-43b7-a815-379c4b765442"
+            },
+            {
+              "id": "4c74cf64-0734-4694-890d-1a235d713bc8",
+              "name": "HomeRegionNotSetException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.AssociateDiscoveredResource"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"W\",\n  \"MigrationTaskName\": \"O<[Jwd\",\n  \"DiscoveredResource\": {\n    \"ConfigurationId\": \"vrB4I4qW&n]f$;Wu>q<uB5]n};bRF!7h5c?,|4 D?T(~0$5#-~b&va&a7|2;4s-x)#XnGK6QV}?zREqDv#,GB<ph0Kl8x*`.u=GZ^t|n-OGYn`#vP)(//^ZfUTzAU_|z#nf& D bHgu*1$/Z?8W\\\\kON+@Dh3\\\\J0pOd%UZ\\\"nCT[6?x[Gs6gfrE.IW0=#b`#1pL_:0{pt,e(ho')nkHeQ;O|k@Gw[=Go'INoIwCys]do1Ce#H'OX[hr(l/@wx@jVIr\",\n    \"Description\": \"aDm- <m_SzWCG}'7^PiYHX<mE5K2(r;:lQ~F4j]WogGKw^J2F|aVvn|W/V!IP0b9O#xWqkI^3tkZ>sff:N:-TRanc>)G[s b*l|mxTF88]j@i@1|(~h2P$-jWS{!;&'d4QB6.>3Jz0m=l\"\n  },\n  \"DryRun\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.AssociateDiscoveredResource"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:05.000Z",
+              "updatedAt": "2026-07-28T10:40:05.000Z",
+              "uid": "35240-4c74cf64-0734-4694-890d-1a235d713bc8"
+            }
+          ],
+          "createdAt": "2026-07-28T10:40:05.000Z",
+          "updatedAt": "2026-07-28T10:40:05.000Z",
+          "uid": "35240-9824d0e9-907a-4664-b006-69c8cf7c7d0f"
+        }
+      ],
+      "id": "307a1670-d6c6-4429-98b4-3ff47014e9ec",
+      "createdAt": "2026-07-28T10:40:05.000Z",
+      "updatedAt": "2026-07-28T10:40:05.000Z",
+      "uid": "35240-307a1670-d6c6-4429-98b4-3ff47014e9ec"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://mgh.{{region}}.amazonaws.com"
+    }
+  ]
+}

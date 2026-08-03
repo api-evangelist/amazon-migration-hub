@@ -1,0 +1,838 @@
+{
+  "info": {
+    "_postman_id": "75936d4a-7d2f-4811-90b3-a18a1e1b28fe",
+    "name": "AWS Migration Hub #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.DescribeMigrationTask API",
+    "description": "<p>The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.</p> <p>Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home region.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:40:09.000Z",
+    "updatedAt": "2026-07-28T10:40:09.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-75936d4a-7d2f-4811-90b3-a18a1e1b28fe"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask",
+      "item": [
+        {
+          "name": "Amazon Migration Hub Describe Migration Task",
+          "id": "16fa421d-02b8-48c0-815f-b7a75b7a8057",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSMigrationHub.DescribeMigrationTask"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ProgressUpdateStream\": \"=x&*R5^z*A\",\n  \"MigrationTaskName\": \"s\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSMigrationHub.DescribeMigrationTask"
+            },
+            "description": "Retrieves a list of all attributes associated with a specific migration task."
+          },
+          "response": [
+            {
+              "id": "d8047ee6-2b07-4254-8e06-ea8e349f5e4c",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.DescribeMigrationTask"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"=x&*R5^z*A\",\n  \"MigrationTaskName\": \"s\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.DescribeMigrationTask"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"MigrationTask\": {\n    \"ProgressUpdateStream\": \"8)U?[0%n.\",\n    \"MigrationTaskName\": \"<N6H\",\n    \"Task\": {\n      \"Status\": \"NOT_STARTED\",\n      \"StatusDetail\": \",1$(~]K#{imXmd'~&~y#]o/)vP1duU=eMhqZo<!d}  JZW00suG~!zT6W)RUv,:U9lrd/mJ3]$e|O;%9C[+?:w~Q-46br~y&V8C,vxst43R7bni\",\n      \"ProgressPercent\": \"<integer>\"\n    },\n    \"UpdateDateTime\": \"<dateTime>\",\n    \"ResourceAttributeList\": [\n      {\n        \"Type\": \"VM_MANAGER_ID\",\n        \"Value\": \"t.Bp1l8>u7N[RRN?E?B3VBGV81:5#DV6Zj5mim*d3X 2!$OMy4Ea2U0E:ZXAr@w!W-!x^)*+Bhsrw9R$*$e7sHK%qo(;xv8n>s>To@Vq!p!F7(-\\\\\"\n      },\n      {\n        \"Type\": \"MOTHERBOARD_SERIAL_NUMBER\",\n        \"Value\": \"'HVw/!aPi![Lk1AbTM{R.^l@Gj8\\\\]NnqL].f(`G@iJ6?V@_jjG}_b}H8y[pDzWRpwWjb*`PjYo9Vx]}D((.s:IN7m^,U{xiRg\\\\ ~m+FYgn3QY(qR+r1h&O09{02{j.\\\"M'/Ov?_% Dwx%y:[v%qZHL9\\\"{c3'|OUqo%;u{cWV3.u{.>`Tt\\\\dxKR:hi(byA#P\\\\#A.B-Cs$hIH^RZ(o&3\\\\84(@7J^`A8m<%KZy]PQs?!Q:&?vX~:x1][go\\\"l%_xd;3\"\n      },\n      {\n        \"Type\": \"BIOS_ID\",\n        \"Value\": \"2C^(PC@!%1fzb0}PMuW;}L,6!=\\\"T-n=&Q6(mSzna`jnrE= \\\"&B#WyKUz>GxLXEi1Fu;UHt*g!AyrR/({r,q*8!X%_o`bK+;*}cibUHD<O~s'GH8Ml2=2Pe/M:mVxh8'&$5_V@~7}S, $[>`RY]a;WB79yb%O0V-G'oCRk`ub-CBC@h%35L-AHO~_y#rqhGAgVL+]@j+j<=/4C7EChsbXYSim5z@DiTvIk9HfG'qh>hx9@'HH/\"\n      },\n      {\n        \"Type\": \"IPV4_ADDRESS\",\n        \"Value\": \"e5\\\"Q#So-]df8^_d9v\"\n      },\n      {\n        \"Type\": \"VM_PATH\",\n        \"Value\": \"Lm$^p.FlRs@#y2I\\\\1<\\\\Y50.gYZx?CaS@~u!kO9cWK3ee:q\\\"+,g|H& SK/}q/=!09Go<'\\\\,zJuwYe1yqF%Gg8'r<?W&ZOwsr1rdHiv)H{Z BPz9?A=X xO,x7Q\"\n      },\n      {\n        \"Type\": \"VM_NAME\",\n        \"Value\": \"tH`-^kKcSL,3r*|q,c@JWp7vv[CtKn\\\\:iKu})U\\\\rOBau%z'YT+1d&=%sJK0_v/^,wLyThs\"\n      },\n      {\n        \"Type\": \"MOTHERBOARD_SERIAL_NUMBER\",\n        \"Value\": \"ywe>VMf (P%J1&dZ?+Ho#J5v$IWG`\\\">Q|&Q;N'zfI&(3V|FKc h;?TT\\\"p;$s'F$x;]dj$P<X1c;z(+4i-,>]n<NLL(h1)@Jc>\"\n      },\n      {\n        \"Type\": \"IPV6_ADDRESS\",\n        \"Value\": \"~9U\\\"?'GA;q$nt8dXN6&=+}2e^QsN35`rO;ozqjLbCLi9mz{ZIJy-Q}cY[+-^aj$[w{&`n>\"\n      },\n      {\n        \"Type\": \"VM_NAME\",\n        \"Value\": \"\\\\L]Z?0v~!Yr0AemRbd]t8RJI-\\\":F1-SjM9)};$yACjhu{: sKpqvV\\\"y-Wo]</a(!][Tw0Y.tetNm~d/_d|HA;NSFzl6M{`}v/@9i MN:n9j\\\"vhXZ6T[~!L'7onoKuzrh:1\\\"bT[(ds6|8{6_vp8ne5*6lBk;VB(:hBlcu_m-IFH8q^w_Hf`nw|'ubSWED!0:+qp @tC\\\\8=|a%1pX`xd,5\\\"K*'y,R*,X;Vc26ZCyKm#mee(\"\n      },\n      {\n        \"Type\": \"FQDN\",\n        \"Value\": \"\\\\3}/.y6ZQy>**V EWfaC`G J2eo|S_ts(k)eU\\\\wFq,Q;Ywf4LV C\\\\9Qqqu;dj\\\"px6eSdFWgoeEB+zRZ }y\"\n      },\n      {\n        \"Type\": \"BIOS_ID\",\n        \"Value\": \"W^1'(FU>$eimkT38~1Tz*Ub`WYPm2Q~,+}&K$?&[j7uR6/y5Y[+v<<:af.?)F-,\\\"Sk:$u+NPZJcI-_(pixTN)GK)w\\\"i<P%A@NBW usLIv:SjtjOjl?e}Z\"\n      },\n      {\n        \"Type\": \"IPV6_ADDRESS\",\n        \"Value\": \"GZIgPY]iP^[<!Y,g\\\"_&>KQ+/v:#>?=#yw<LWT'rpl\\\\j ,:ov :uUYc^U~b+he;L(u-`3 >De<rl:[Ad<1+l#Wh({EABmvW1NfWn2BaEl`F&:c\\\"4SMZ\\\"hx,p~y2ymXht4Yfwk=nLz:2+=-o&yJZtY\"\n      },\n      {\n        \"Type\": \"BIOS_ID\",\n        \"Value\": \"m7}iHl~8/xc6VQJ=!q-G?ZjsnM_R`o}ggAhB9d#.:'zNL)V,Q&j$46`AM5\\\"3^\\\"\\\\):*&^he_xf#.*@AWqlwPZQs#S)e}[8,@AiUUG3`gwlL}R#CMXk)#ZJfLSTWA?vR:n}EyV<!xY@*_kHI[W@Tw|:Vt[= deA3$\"\n      },\n      {\n        \"Type\": \"VM_PATH\",\n        \"Value\": \"}YmeAZ*f6>H)d+/bD iI\\\\(3J~xCugV9dg;ge*s~C)UsV%v#+H(NHTtzG9s]M^PF4L]hhQQT\\\"M?XP[][s8*'Y4T$7JvYt.`;$!/o]&y`AU6DkrvdQ*Ozv]8V$rldh`-5-5zK*]!TlY48Af4NQlhu:tkWz+^t|-_\"\n      },\n      {\n        \"Type\": \"VM_MANAGER_ID\",\n        \"Value\": \".M!rP/aPtAHz puqc!F<sR# 6euQ[-:;aCTN,%E E]F`LWlOH?nT*[M9D]R}/Yr+P{eTh8hC}<p6s!CyqMYb=S<WRie-:ZGmXHT.x}VC/[p+gn^]`0X{)u|fdFK|_V0r+N,~MW@:AHN3 E3]Y0Bz0BZA$W\"\n      },\n      {\n        \"Type\": \"IPV4_ADDRESS\",\n        \"Value\": \"^c$^dzn&)fGKfUBI~8)d3l&m.vd<j)@5{!]t92yUz.8>]?5jhs`^5&[[`PUA/!X7l%A2uQ9smK#!sSVMAva4PMe6-NXig/1\\\\DHqS}>4,sDjUe_(+sA~e)jw!PdBG>*4a]1Z~+bKv5jcfRe7*cg>{yo$)Ionc@&/j/Dp}j;~mSSbxhZKg\\\"w;gUMfNPB5~f6F ;$i<#cp@TR}(YL[PzFn~H^\"\n      },\n      {\n        \"Type\": \"IPV4_ADDRESS\",\n        \"Value\": \"$%JuR,B5[Mj8-.6yB`j.o7vc#>J^+UmZ)Lt`~<(h2^J5*>'CN=Cps1>}7zy@BQY7</=\\\"hEyU,n0!gwD]1G30y@'POqCQ;EPn{rXH<A+ rql/\\\\@zC\"\n      },\n      {\n        \"Type\": \"VM_MANAGED_OBJECT_REFERENCE\",\n        \"Value\": \"hl\\\\v5dpI9+8y(]G`5S6|+ty1^ZEDK\\\\x;\\\\Ut(\\\"QKA@cm;^PZA~_baF;ZG=F%CjDp855f$QN|FN\\\\%QTqY%.2;Uf=.-HUY5C\"\n      },\n      {\n        \"Type\": \"VM_MANAGED_OBJECT_REFERENCE\",\n        \"Value\": \";J+PNusFppFG\"\n      },\n      {\n        \"Type\": \"IPV6_ADDRESS\",\n        \"Value\": \"myVo=oJij.R9tlI2X$]tL2^?rxtX0ravP{wOq]HF7q<tB=\\\"?txRU1bN3*~d.=22CW0Ex/D[>r\\\"|`*+='HWbO565t[Y6;q:oW6c::'#sDOf=B'<@!z{_.9Nr#<jgA^wNKxZr|E(pRO'/H\\\\pMV<NA{%}jW`|r2n-\"\n      }\n    ]\n  }\n}",
+              "createdAt": "2026-07-28T10:40:10.000Z",
+              "updatedAt": "2026-07-28T10:40:10.000Z",
+              "uid": "35240-d8047ee6-2b07-4254-8e06-ea8e349f5e4c"
+            },
+            {
+              "id": "01e2ed48-2de0-4a95-a684-064af5053226",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.DescribeMigrationTask"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"=x&*R5^z*A\",\n  \"MigrationTaskName\": \"s\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.DescribeMigrationTask"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:10.000Z",
+              "updatedAt": "2026-07-28T10:40:10.000Z",
+              "uid": "35240-01e2ed48-2de0-4a95-a684-064af5053226"
+            },
+            {
+              "id": "66e5fb55-c32d-43f7-8d79-056e62c43ea7",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.DescribeMigrationTask"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"=x&*R5^z*A\",\n  \"MigrationTaskName\": \"s\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.DescribeMigrationTask"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:10.000Z",
+              "updatedAt": "2026-07-28T10:40:10.000Z",
+              "uid": "35240-66e5fb55-c32d-43f7-8d79-056e62c43ea7"
+            },
+            {
+              "id": "1e58d2eb-f057-4767-9c57-eb1a7aedea65",
+              "name": "InternalServerError",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.DescribeMigrationTask"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"=x&*R5^z*A\",\n  \"MigrationTaskName\": \"s\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.DescribeMigrationTask"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:10.000Z",
+              "updatedAt": "2026-07-28T10:40:10.000Z",
+              "uid": "35240-1e58d2eb-f057-4767-9c57-eb1a7aedea65"
+            },
+            {
+              "id": "bb664b85-276f-4f96-bf92-0684bc958aec",
+              "name": "ServiceUnavailableException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.DescribeMigrationTask"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"=x&*R5^z*A\",\n  \"MigrationTaskName\": \"s\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.DescribeMigrationTask"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:10.000Z",
+              "updatedAt": "2026-07-28T10:40:10.000Z",
+              "uid": "35240-bb664b85-276f-4f96-bf92-0684bc958aec"
+            },
+            {
+              "id": "46cb3d12-2c76-422e-b866-1541b40791ec",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.DescribeMigrationTask"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"=x&*R5^z*A\",\n  \"MigrationTaskName\": \"s\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.DescribeMigrationTask"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:10.000Z",
+              "updatedAt": "2026-07-28T10:40:10.000Z",
+              "uid": "35240-46cb3d12-2c76-422e-b866-1541b40791ec"
+            },
+            {
+              "id": "f922c676-6cf0-4839-83a4-02b0a97ce6db",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.DescribeMigrationTask"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"=x&*R5^z*A\",\n  \"MigrationTaskName\": \"s\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.DescribeMigrationTask"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:10.000Z",
+              "updatedAt": "2026-07-28T10:40:10.000Z",
+              "uid": "35240-f922c676-6cf0-4839-83a4-02b0a97ce6db"
+            },
+            {
+              "id": "b00448ad-ffca-4557-a785-6cc598a6ea50",
+              "name": "HomeRegionNotSetException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.DescribeMigrationTask"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProgressUpdateStream\": \"=x&*R5^z*A\",\n  \"MigrationTaskName\": \"s\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSMigrationHub.DescribeMigrationTask",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.DescribeMigrationTask"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:10.000Z",
+              "updatedAt": "2026-07-28T10:40:10.000Z",
+              "uid": "35240-b00448ad-ffca-4557-a785-6cc598a6ea50"
+            }
+          ],
+          "createdAt": "2026-07-28T10:40:10.000Z",
+          "updatedAt": "2026-07-28T10:40:10.000Z",
+          "uid": "35240-16fa421d-02b8-48c0-815f-b7a75b7a8057"
+        }
+      ],
+      "id": "475f9d0d-13df-420d-9431-ec469c244712",
+      "createdAt": "2026-07-28T10:40:10.000Z",
+      "updatedAt": "2026-07-28T10:40:10.000Z",
+      "uid": "35240-475f9d0d-13df-420d-9431-ec469c244712"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://mgh.{{region}}.amazonaws.com"
+    }
+  ]
+}

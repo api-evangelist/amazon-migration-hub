@@ -1,0 +1,846 @@
+{
+  "info": {
+    "_postman_id": "0a18e0b2-d316-4847-a6d4-6b3f38a65892",
+    "name": "AWS Migration Hub #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.ListApplicationStates API",
+    "description": "<p>The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.</p> <p>Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home region.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:40:38.000Z",
+    "updatedAt": "2026-07-28T10:40:38.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0a18e0b2-d316-4847-a6d4-6b3f38a65892"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSMigrationHub.ListApplicationStates",
+      "item": [
+        {
+          "name": "Amazon Migration Hub List Application States",
+          "id": "42ce22a4-d1de-49c8-91be-ba6293e7ba4f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSMigrationHub.ListApplicationStates"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ApplicationIds\": [\n    \"~hK[(%a`{&X9 X|qqS9H>pj7>)0X(>(tP[*HU&<}R!T:^E\\\\t'PtIq\\\"~/g*\\\"OT$Zm ^Tp.{RRTZ:70RG~\\\\ca_;%?~n6CC=Et6gjFH3,hi+)8^~3Ef.`]=IPrC4,1jyo)52S_A%OM\\\"|hP4']/X:K6Bo9dr'e9F(ip.=b-GK12v\\\"Rv]~xZXCn,Mxq@\\\\7/vhP125[5@}vz<%>P\\\\O\\\\U3\\\\x#O*DRL\\\"_&>m`v#g1Dv&;g*1\\\\~0ahVuc(k<K)aa 0e!HP>Vz\"\n  ],\n  \"NextToken\": \"lIv=KNd6RA3inYVC5vvXRpBYrBSTiu=EXLgevHkDmjTKO5G0R1weSUnNXDbWf8xBpoUrfFWgTlKHFrUlqn2aIGtegLgJ7=Iw6i2=V7pjPUHNLtN4JidFzlgb4soo8kiKx=PVgUqwdxq4tx8QDB2d4YnrG69LqRiW6Pakv3mls+Iu9+CIAk5Dx+p60f2dLHf5n57Kn178jI5K/tFIlKXR/YK9SFI2mPbhOlO95fuAC6jJM6WfhhMNryZqTa/ouQju\",\n  \"MaxResults\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListApplicationStates",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AWSMigrationHub.ListApplicationStates"
+            },
+            "description": "Lists all the migration statuses for your applications. If you use the optional <code>ApplicationIds</code> parameter, only the migration statuses for those applications will be returned."
+          },
+          "response": [
+            {
+              "id": "bc7fe198-bf47-44ff-bded-18fd374f86b6",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.ListApplicationStates"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ApplicationIds\": [\n    \"~hK[(%a`{&X9 X|qqS9H>pj7>)0X(>(tP[*HU&<}R!T:^E\\\\t'PtIq\\\"~/g*\\\"OT$Zm ^Tp.{RRTZ:70RG~\\\\ca_;%?~n6CC=Et6gjFH3,hi+)8^~3Ef.`]=IPrC4,1jyo)52S_A%OM\\\"|hP4']/X:K6Bo9dr'e9F(ip.=b-GK12v\\\"Rv]~xZXCn,Mxq@\\\\7/vhP125[5@}vz<%>P\\\\O\\\\U3\\\\x#O*DRL\\\"_&>m`v#g1Dv&;g*1\\\\~0ahVuc(k<K)aa 0e!HP>Vz\"\n  ],\n  \"NextToken\": \"lIv=KNd6RA3inYVC5vvXRpBYrBSTiu=EXLgevHkDmjTKO5G0R1weSUnNXDbWf8xBpoUrfFWgTlKHFrUlqn2aIGtegLgJ7=Iw6i2=V7pjPUHNLtN4JidFzlgb4soo8kiKx=PVgUqwdxq4tx8QDB2d4YnrG69LqRiW6Pakv3mls+Iu9+CIAk5Dx+p60f2dLHf5n57Kn178jI5K/tFIlKXR/YK9SFI2mPbhOlO95fuAC6jJM6WfhhMNryZqTa/ouQju\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListApplicationStates",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.ListApplicationStates"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"ApplicationStateList\": [\n    {\n      \"ApplicationId\": \"|eB9y'DP6Or paMH*.6S,9;662Bh-OJ&nv%wFV3^={fw7=m!g^&HQjw=[\\\\~I5sP7`kz12iY{JDc-wPcGtS}'o:$Y_^+zl!>l<G5Y@!iA%`ey:{~~_A8jS{|kv0N-EeXp*rq/27hJ^?\\\\\\\"J&UoAqNuYLo\\\"jQ@fyrEo@HS]]*KR66\\\\Jy=X8nV&+c#J}g$Y~?@e3=G[W#)98Md`Ju$Ta!A6KP!|.RpTsuGF7V6aT7mmtqV_W1EM=B&jHlOf4Z2\\\";yIrv\",\n      \"ApplicationStatus\": \"COMPLETED\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"t_R;lrM_.4p&_S_iE&qXD[^I5DUI3olP/c(@!w*L+wQK4lOFRVKUHh`-:>AlBeJ5^I_4./-\\\\diL\\\\N4]@IgzIWWwG>_dRg)Cie[<8|h5!g;yf=s cCm[4zz\\\\~}[5'?@m<XOq2gdUCuzhG\\\"WMBDK;0;t[<.>8>yVK&JQp7ymS.7vY/y=aVjCzpP%e|t#$YNTJ.O`)(LdI3C f)+9[22e v)o91{<pm@h[Nvsqff0Z [esdl0%k#5r!;8dp8 7x;K2)\",\n      \"ApplicationStatus\": \"COMPLETED\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"'g%+;k}r1 `jm07\\\\%3}9Qf!LoKa:dDbz^3wOs]*->w(/\\\"T7r14 ~TUM`dZb>,{y7chd0X}%Zgo,ml*I d[=Rxi|2*-*q]7-)i).Q6:^U(hQ7zMkm){X(?]:G()O\\\"?L$)N]!J2SL$IB;\\\" Gpky:>M>S[nXs4$b7dP\\\\!xTZk2;mg6`_1_mIExk#m}vkzj;IWxUS$M+8C,sy HQ].?P|\\\\@k$y`f)|s$*Dq!}q9=4f!tf`9}q};5|bfK=EY{3@#u.PP{\",\n      \"ApplicationStatus\": \"NOT_STARTED\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"`].m~eF{$|lD}bB?a@%^FIc.vI*BS1t2U&sv c!K(IZUiF,CUue#\\\"w8S3/!*-7UIIhr2d]`^ JeZ9DDeWIql/Ubc^<7hdGpgyir^@?.L#(hq7tYjY0+Ki#fF?R)o>fG2asi2?\\\"Wqz`&@CLt2Z$!-POCE$2`X]U?&Gfpew o*;u|?4 2l=\\\"(hxxH?p#\\\\5&yU@|k:/J*BT!Y3{s\\\\\\\"N <SWOIITi9\\\\[qTlE:`?0Q=Q rgAR>fgB_nWD9;fcqah8e-hT\",\n      \"ApplicationStatus\": \"COMPLETED\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"se\\\\|o],\\\"J$]B#42X,>czUW8^0A~iVvU(-/R^ @WMe;YfB$Xa M\\\\H,=yH2h?+y@LTw{Ti|OOm+lQrjJn]X-ifms+`|~5E9i:e3;`DH&w' Z;8jajV5[5+*m[%a'J,1;J&wAJHM\\\\#F'}&u}y'kM;1No2q8~=+uc$R>!}z,:v&Ux<[<l>}(uF5_ #~~3>S8rl)/BxM'i2VA;Vnf)T(M5]f_1<a5:TW&Sla< ~M^_c7>xk5xhW/gJ}|z.0m7.}U-nSpN\",\n      \"ApplicationStatus\": \"NOT_STARTED\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"P\\\"V6H{]FV(L}B1Rn9\\\\I?{CuTz|s0ZH?l1{po< q=l_WP}HlQA_~J~]9F-t$5zp `[fPY<2#oPS'XxwjP=/2O\\\"[8z)b#>YshwY>pa[LVa|&P!lJr~?n[jwt[/-\\\\NM.nmi8!\\\\=T/Q+cMhRck\\\\B)cQN^Q@@rER<P8)Ibvu;ZAcXih/?aPO\\\"5z}D[wc<cJ?CueP4~Q@)8?)PBb :~RVw<8hY'q)Q&~X 0]$piUb5docLUe@7y097;ez]${J1}P@'AA9^\",\n      \"ApplicationStatus\": \"NOT_STARTED\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"EQW\\\"UuK7Z2k1`ohE'~CXQ JI!j/no|TQrC]YIffaUJ`p2AsoB[YDq:\\\\g@G2kI*$Rit?1n,E{'-hD\\\":vy/mpo8;\\\"N*!oIQPkZ<1wTNJ4yrZ{'Gm>P6RPZJ-(/R;L#8Oc<-#bSDH*3:vsN_\\\")3a~:Eh<%SRpK=dN~4Ygo'_]{ItdA=Kyn|cIdx HhtYf~#dReOJyJc=0MH'beX;(|}~KU%u3R[c7 gyc2U|6tHe|9?lB|)LQ!4.)eP?[sJfPj\\\\3k'C\",\n      \"ApplicationStatus\": \"NOT_STARTED\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"?&K5+z90j2v^vmV-1%K`l2BZ;}UI*24MP28Y6[w[3-H@D32nXg4`;pFdrc L*sLLj\\\\Ve*WSv^c)=V!ug#M 2A]\\\"Jd:[& QlW*0(4&$Vi#ToN`j9|8-#rHJbcXZ-gNyx[><hE~$;`-J5?n)i7UwL<ghguDeJ=#2gBNGmm9l>Hgwddd[+=\\\\+<X_N;0}JE#{7'8mN{*?V%\\\"}q*jSF)m;Xlf)Iy l11)$l{HF%U Za]FxjB'uF7lZK]6q9Fr%{0]y=e=\",\n      \"ApplicationStatus\": \"IN_PROGRESS\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"KB0GD;k=>#%$\",\n      \"ApplicationStatus\": \"COMPLETED\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"OBZnrPS({XEdf2T<C\\\"@gUpvD}!sCU`lVO)m!sz9O&coU7}y!q>OS0,&hUktcw9PGVRS*2~zxho<2*$`'V16745Sfqs5;1=H_[H%$X~9c|EtLsq>'uzm`vWoF1e_y\\\\wX_^n*238vXTQ+j)&EwQnN:z!\\\"ch(HZS~__1ABc%TCA(z4V+1N@OI16#}n2d~g7f+t;<]_0+'91=b&\\\\H'PIIb eS9hlEX0_@p)?Ak&+rsz@(@!WQX!6CuhKGug#9}#) (e)\",\n      \"ApplicationStatus\": \"COMPLETED\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"#r^\\\\6mz`|QI_5r~]K(TS\",\n      \"ApplicationStatus\": \"COMPLETED\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"nR<$a=kKQB-gj]8bL2_Sh!Ksjx({R^x3?l;uf#{bS<Lx~2FT*nKwch>=3d&d32IQJ\\\"q=v`P\\\\}Aa5(Jmz0.QQ~EA:sZK|W52<(A\\\"Ek?:fgU\\\\_S;/:;b5y\\\\4uL<F_\\\"wWq|_}zw:zv6@Sq[3}G*=;h7Y!IN(Zvbat'?=KgmKHd5P!OD-+qw5QMY~yJIyk_O/0YKsj`.!T^s\\\"\\\"n*xSO\",\n      \"ApplicationStatus\": \"IN_PROGRESS\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"&(`Y^3iAkzSz6}bNJ9IF.QDM[c^Y1I%q3><gzIkRy^J+YR&9AE?uc<%% B[b_$])?K'Fo|^%,q0T)ij1$kJ^Tq:))24/tJ6tx]o<WS0k.AoYF`6#k7/y}]7_gaO.2]Cp}&> Z~#bg,6Z+sN];@Qd6\\\\Do4r{N_pmfN_!Z&6AhyMw7*-Y&~BOldHo/ngKMCV?-6_f]['oUovbcoA7?gu!}\\\"T`Rl;s<YJ0}87ep^P]p$zzZ>\\\\6Ke#V+b\\\"Z]3dZB!8qt\",\n      \"ApplicationStatus\": \"NOT_STARTED\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"iA,SLu0AR?INX0@e#Y%]$8md>bAPyr|*@Hsq2/@rhO-'~C`Bz{Po 'i+o:VT(\\\\DU{mcN3E%78t):+w\\\"-fJgNQT)qT-c}9^az>hILDo#LTI+EzeV6Dk|A[lil s>)PWAjdW.;/7=>1JBTDslyzK,&{S&6[0gzJPDkhW\\\"@g7**^lm9A)=On5/)<+zrir$T^M'kupiC@)@USIaR0y9D ?k4]3v$_duP(O 5~43@4Pn|91wl3mm/2<&)91U*14`T9_$3\",\n      \"ApplicationStatus\": \"IN_PROGRESS\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"UG.b8no2(cF%lW*t/=DT1lDHy_!{[l`evE8n^Dq%-I`2@j8\\\\9g!}Vc_WP.b`EFO&ZZDPDbWKmZ|7xK>\\\"`%I6i+*}3:kWjC5>$((+FiTz|[`3'd?Vb)Y[5`5z[)nPU\\\"\\\"qWqPv#7#4}v`3klv56Y=WF]8DZU!EKq7QeU(|Jg6&?I;[  i,|r8&cyFm[(BN}~VqWLn<n=g9^`10HAv+\",\n      \"ApplicationStatus\": \"COMPLETED\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"rH'EM6I'oCcM_CFzxJS>?D')q 9q!{[~DNUYW=0Mkdy@Ia)w#cL,fW[>#r\",\n      \"ApplicationStatus\": \"IN_PROGRESS\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"^Y<VxX3R+U9cP{B\\\\}*Q\\\"\\\\)L2.G=ipi`ftzS7^AGjjcF0,UM[5T.nYiV<4/=.;~\",\n      \"ApplicationStatus\": \"IN_PROGRESS\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"rwWU%HHP`&fkNf9:-8{6&ARkc,}tuo?-^^<{+/_[z6/=eNPdy&>zd+cdAL?@BpRatu\\\"s95^82Gb/3[bI42q]'ynl!@?:z@ku$oh0*eFI$nOK`MK` p{|Nq1O0${:eDmW Oz[/>b\",\n      \"ApplicationStatus\": \"IN_PROGRESS\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"\\\"o-;|A:U?6vIkd~78=W}Z|_oX+7eU}^QYiHKEEgR8D,Z6s9c@XM'+j{\\\"5\\\\k680`t&uR0|R\\\\]/\\\\J@;Fr2?,FIcK; 8VtN*+R?`nQjR4b2m$Y@%+H4?W]<e;\\\\VB;+mB2|k,RAKgL3'd4e%U +Z3_yVG<;!`1&xfqq}dsz*gA[+q,X<t0$S-K18gIQn__S(9EdrlU^zy&NOQ:<d_)gYCZ?\\\"0<KH@=I7.12^vQ-Q2FB[h-\\\"[XZ)vj\\\\<6amnFlR',GyrD\",\n      \"ApplicationStatus\": \"COMPLETED\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    },\n    {\n      \"ApplicationId\": \"btGdc4kH:Waad%[:)pf/f]90,~Id<tjJL#tKxT;n=f506_upt.\\\\zM)Z7v1iBwO,102pdvb$wpvR+C%8r@ OrW1M+M~CW$T##+QH9(gQUp:\\\\``XTpD^F{gQD^=;ll[u.j{ :8cNoe}c[{d.eJ#?>lz]as~Gm%hxsA4Xg.9f2-5%<}PwYZ1tk'eAKeal8d2[VDr io)D>?5L;2l]e<K#4> <e`~8p.b]~2`Lu`K8&\\\\zGMc8&{/GBV@[;T*Z=SLT8-%\",\n      \"ApplicationStatus\": \"NOT_STARTED\",\n      \"LastUpdatedTime\": \"<dateTime>\"\n    }\n  ],\n  \"NextToken\": \"+kDIX/PUZN7RexW15B1ktb4/REZ6IB3Rtk0P3eTj8+3j01U0FlqQUSWWDqBJY60O3mt+k0pmMFKtjXFjCpUrIzrxhssVTFLKNUUxg1vTHgsl4iADB6LuVhQRWnLpOBKOmMTe/bJ6eYqhoDj=jpaml8t0GqqBf=TMDHuNpWfbxUZzgVo/s/YAq8VgLWESkV5JmadKyRQ7aTN3ewEyOE2+7RE5dUCMbaTr=iarEvsEUUSTm+mfI18f0eX+fXnrlmKq\"\n}",
+              "createdAt": "2026-07-28T10:40:39.000Z",
+              "updatedAt": "2026-07-28T10:40:39.000Z",
+              "uid": "35240-bc7fe198-bf47-44ff-bded-18fd374f86b6"
+            },
+            {
+              "id": "e76272fb-fd59-4f90-8e8b-a0abdea96e8c",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.ListApplicationStates"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ApplicationIds\": [\n    \"~hK[(%a`{&X9 X|qqS9H>pj7>)0X(>(tP[*HU&<}R!T:^E\\\\t'PtIq\\\"~/g*\\\"OT$Zm ^Tp.{RRTZ:70RG~\\\\ca_;%?~n6CC=Et6gjFH3,hi+)8^~3Ef.`]=IPrC4,1jyo)52S_A%OM\\\"|hP4']/X:K6Bo9dr'e9F(ip.=b-GK12v\\\"Rv]~xZXCn,Mxq@\\\\7/vhP125[5@}vz<%>P\\\\O\\\\U3\\\\x#O*DRL\\\"_&>m`v#g1Dv&;g*1\\\\~0ahVuc(k<K)aa 0e!HP>Vz\"\n  ],\n  \"NextToken\": \"lIv=KNd6RA3inYVC5vvXRpBYrBSTiu=EXLgevHkDmjTKO5G0R1weSUnNXDbWf8xBpoUrfFWgTlKHFrUlqn2aIGtegLgJ7=Iw6i2=V7pjPUHNLtN4JidFzlgb4soo8kiKx=PVgUqwdxq4tx8QDB2d4YnrG69LqRiW6Pakv3mls+Iu9+CIAk5Dx+p60f2dLHf5n57Kn178jI5K/tFIlKXR/YK9SFI2mPbhOlO95fuAC6jJM6WfhhMNryZqTa/ouQju\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListApplicationStates",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.ListApplicationStates"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:39.000Z",
+              "updatedAt": "2026-07-28T10:40:39.000Z",
+              "uid": "35240-e76272fb-fd59-4f90-8e8b-a0abdea96e8c"
+            },
+            {
+              "id": "6a6331b4-fca8-47ff-bbc2-ce47c84854d2",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.ListApplicationStates"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ApplicationIds\": [\n    \"~hK[(%a`{&X9 X|qqS9H>pj7>)0X(>(tP[*HU&<}R!T:^E\\\\t'PtIq\\\"~/g*\\\"OT$Zm ^Tp.{RRTZ:70RG~\\\\ca_;%?~n6CC=Et6gjFH3,hi+)8^~3Ef.`]=IPrC4,1jyo)52S_A%OM\\\"|hP4']/X:K6Bo9dr'e9F(ip.=b-GK12v\\\"Rv]~xZXCn,Mxq@\\\\7/vhP125[5@}vz<%>P\\\\O\\\\U3\\\\x#O*DRL\\\"_&>m`v#g1Dv&;g*1\\\\~0ahVuc(k<K)aa 0e!HP>Vz\"\n  ],\n  \"NextToken\": \"lIv=KNd6RA3inYVC5vvXRpBYrBSTiu=EXLgevHkDmjTKO5G0R1weSUnNXDbWf8xBpoUrfFWgTlKHFrUlqn2aIGtegLgJ7=Iw6i2=V7pjPUHNLtN4JidFzlgb4soo8kiKx=PVgUqwdxq4tx8QDB2d4YnrG69LqRiW6Pakv3mls+Iu9+CIAk5Dx+p60f2dLHf5n57Kn178jI5K/tFIlKXR/YK9SFI2mPbhOlO95fuAC6jJM6WfhhMNryZqTa/ouQju\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListApplicationStates",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.ListApplicationStates"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:39.000Z",
+              "updatedAt": "2026-07-28T10:40:39.000Z",
+              "uid": "35240-6a6331b4-fca8-47ff-bbc2-ce47c84854d2"
+            },
+            {
+              "id": "2554bfe3-539a-4367-a756-ba8ff4f3f5e8",
+              "name": "InternalServerError",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.ListApplicationStates"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ApplicationIds\": [\n    \"~hK[(%a`{&X9 X|qqS9H>pj7>)0X(>(tP[*HU&<}R!T:^E\\\\t'PtIq\\\"~/g*\\\"OT$Zm ^Tp.{RRTZ:70RG~\\\\ca_;%?~n6CC=Et6gjFH3,hi+)8^~3Ef.`]=IPrC4,1jyo)52S_A%OM\\\"|hP4']/X:K6Bo9dr'e9F(ip.=b-GK12v\\\"Rv]~xZXCn,Mxq@\\\\7/vhP125[5@}vz<%>P\\\\O\\\\U3\\\\x#O*DRL\\\"_&>m`v#g1Dv&;g*1\\\\~0ahVuc(k<K)aa 0e!HP>Vz\"\n  ],\n  \"NextToken\": \"lIv=KNd6RA3inYVC5vvXRpBYrBSTiu=EXLgevHkDmjTKO5G0R1weSUnNXDbWf8xBpoUrfFWgTlKHFrUlqn2aIGtegLgJ7=Iw6i2=V7pjPUHNLtN4JidFzlgb4soo8kiKx=PVgUqwdxq4tx8QDB2d4YnrG69LqRiW6Pakv3mls+Iu9+CIAk5Dx+p60f2dLHf5n57Kn178jI5K/tFIlKXR/YK9SFI2mPbhOlO95fuAC6jJM6WfhhMNryZqTa/ouQju\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListApplicationStates",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.ListApplicationStates"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:39.000Z",
+              "updatedAt": "2026-07-28T10:40:39.000Z",
+              "uid": "35240-2554bfe3-539a-4367-a756-ba8ff4f3f5e8"
+            },
+            {
+              "id": "0e87f486-a78c-40e9-bbfb-3368c514c128",
+              "name": "ServiceUnavailableException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.ListApplicationStates"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ApplicationIds\": [\n    \"~hK[(%a`{&X9 X|qqS9H>pj7>)0X(>(tP[*HU&<}R!T:^E\\\\t'PtIq\\\"~/g*\\\"OT$Zm ^Tp.{RRTZ:70RG~\\\\ca_;%?~n6CC=Et6gjFH3,hi+)8^~3Ef.`]=IPrC4,1jyo)52S_A%OM\\\"|hP4']/X:K6Bo9dr'e9F(ip.=b-GK12v\\\"Rv]~xZXCn,Mxq@\\\\7/vhP125[5@}vz<%>P\\\\O\\\\U3\\\\x#O*DRL\\\"_&>m`v#g1Dv&;g*1\\\\~0ahVuc(k<K)aa 0e!HP>Vz\"\n  ],\n  \"NextToken\": \"lIv=KNd6RA3inYVC5vvXRpBYrBSTiu=EXLgevHkDmjTKO5G0R1weSUnNXDbWf8xBpoUrfFWgTlKHFrUlqn2aIGtegLgJ7=Iw6i2=V7pjPUHNLtN4JidFzlgb4soo8kiKx=PVgUqwdxq4tx8QDB2d4YnrG69LqRiW6Pakv3mls+Iu9+CIAk5Dx+p60f2dLHf5n57Kn178jI5K/tFIlKXR/YK9SFI2mPbhOlO95fuAC6jJM6WfhhMNryZqTa/ouQju\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListApplicationStates",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.ListApplicationStates"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:39.000Z",
+              "updatedAt": "2026-07-28T10:40:39.000Z",
+              "uid": "35240-0e87f486-a78c-40e9-bbfb-3368c514c128"
+            },
+            {
+              "id": "5a8b0f25-c9e3-4e0d-87db-ab19824f6c2d",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.ListApplicationStates"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ApplicationIds\": [\n    \"~hK[(%a`{&X9 X|qqS9H>pj7>)0X(>(tP[*HU&<}R!T:^E\\\\t'PtIq\\\"~/g*\\\"OT$Zm ^Tp.{RRTZ:70RG~\\\\ca_;%?~n6CC=Et6gjFH3,hi+)8^~3Ef.`]=IPrC4,1jyo)52S_A%OM\\\"|hP4']/X:K6Bo9dr'e9F(ip.=b-GK12v\\\"Rv]~xZXCn,Mxq@\\\\7/vhP125[5@}vz<%>P\\\\O\\\\U3\\\\x#O*DRL\\\"_&>m`v#g1Dv&;g*1\\\\~0ahVuc(k<K)aa 0e!HP>Vz\"\n  ],\n  \"NextToken\": \"lIv=KNd6RA3inYVC5vvXRpBYrBSTiu=EXLgevHkDmjTKO5G0R1weSUnNXDbWf8xBpoUrfFWgTlKHFrUlqn2aIGtegLgJ7=Iw6i2=V7pjPUHNLtN4JidFzlgb4soo8kiKx=PVgUqwdxq4tx8QDB2d4YnrG69LqRiW6Pakv3mls+Iu9+CIAk5Dx+p60f2dLHf5n57Kn178jI5K/tFIlKXR/YK9SFI2mPbhOlO95fuAC6jJM6WfhhMNryZqTa/ouQju\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListApplicationStates",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.ListApplicationStates"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:39.000Z",
+              "updatedAt": "2026-07-28T10:40:39.000Z",
+              "uid": "35240-5a8b0f25-c9e3-4e0d-87db-ab19824f6c2d"
+            },
+            {
+              "id": "de87bad6-72fe-4521-a35a-8797703c363b",
+              "name": "HomeRegionNotSetException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSMigrationHub.ListApplicationStates"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ApplicationIds\": [\n    \"~hK[(%a`{&X9 X|qqS9H>pj7>)0X(>(tP[*HU&<}R!T:^E\\\\t'PtIq\\\"~/g*\\\"OT$Zm ^Tp.{RRTZ:70RG~\\\\ca_;%?~n6CC=Et6gjFH3,hi+)8^~3Ef.`]=IPrC4,1jyo)52S_A%OM\\\"|hP4']/X:K6Bo9dr'e9F(ip.=b-GK12v\\\"Rv]~xZXCn,Mxq@\\\\7/vhP125[5@}vz<%>P\\\\O\\\\U3\\\\x#O*DRL\\\"_&>m`v#g1Dv&;g*1\\\\~0ahVuc(k<K)aa 0e!HP>Vz\"\n  ],\n  \"NextToken\": \"lIv=KNd6RA3inYVC5vvXRpBYrBSTiu=EXLgevHkDmjTKO5G0R1weSUnNXDbWf8xBpoUrfFWgTlKHFrUlqn2aIGtegLgJ7=Iw6i2=V7pjPUHNLtN4JidFzlgb4soo8kiKx=PVgUqwdxq4tx8QDB2d4YnrG69LqRiW6Pakv3mls+Iu9+CIAk5Dx+p60f2dLHf5n57Kn178jI5K/tFIlKXR/YK9SFI2mPbhOlO95fuAC6jJM6WfhhMNryZqTa/ouQju\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSMigrationHub.ListApplicationStates",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSMigrationHub.ListApplicationStates"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:40:39.000Z",
+              "updatedAt": "2026-07-28T10:40:39.000Z",
+              "uid": "35240-de87bad6-72fe-4521-a35a-8797703c363b"
+            }
+          ],
+          "createdAt": "2026-07-28T10:40:39.000Z",
+          "updatedAt": "2026-07-28T10:40:39.000Z",
+          "uid": "35240-42ce22a4-d1de-49c8-91be-ba6293e7ba4f"
+        }
+      ],
+      "id": "99b112da-c057-427c-9261-98036852edd6",
+      "createdAt": "2026-07-28T10:40:39.000Z",
+      "updatedAt": "2026-07-28T10:40:39.000Z",
+      "uid": "35240-99b112da-c057-427c-9261-98036852edd6"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://mgh.{{region}}.amazonaws.com"
+    }
+  ]
+}
