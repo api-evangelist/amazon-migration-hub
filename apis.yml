@@ -49,8 +49,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-associatediscoveredresource-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.AssociateDiscoveredResource API'
@@ -73,8 +71,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-createprogressupdatestream-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.CreateProgressUpdateStream API'
@@ -97,8 +93,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-deleteprogressupdatestream-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.DeleteProgressUpdateStream API'
@@ -121,8 +115,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-describeapplicationstate-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.DescribeApplicationState API'
@@ -145,8 +137,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-describemigrationtask-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.DescribeMigrationTask API'
@@ -169,8 +159,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-disassociatecreatedartifact-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.DisassociateCreatedArtifact API'
@@ -193,8 +181,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-disassociatediscoveredresource-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.DisassociateDiscoveredResource API'
@@ -217,8 +203,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-importmigrationtask-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.ImportMigrationTask API'
@@ -241,8 +225,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-listapplicationstates-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.ListApplicationStates API'
@@ -265,8 +247,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-listcreatedartifacts-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.ListCreatedArtifacts API'
@@ -289,8 +269,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-listdiscoveredresources-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.ListDiscoveredResources API'
@@ -313,8 +291,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-listmigrationtasks-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.ListMigrationTasks API'
@@ -337,8 +313,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-listprogressupdatestreams-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.ListProgressUpdateStreams API'
@@ -361,8 +335,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-notifyapplicationstate-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.NotifyApplicationState API'
@@ -385,8 +357,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-notifymigrationtaskstate-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.NotifyMigrationTaskState API'
@@ -409,8 +379,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 - aid: >-
     amazon-migration-hub:amazon-migration-hub-x-amz-target-awsmigrationhub-putresourceattributes-api
   name: 'Amazon Migration Hub #X Amz Target=AWSMigrationHub.PutResourceAttributes API'
@@ -433,8 +401,6 @@ apis:
     url: https://aws.amazon.com/migration-hub/pricing/
   - type: FAQ
     url: https://aws.amazon.com/migration-hub/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-migration-hub.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-migration-hub/overview
