@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Migration Hub #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact API'
+  title: 'AWS Migration Hub #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact API'
   description: <p>The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.</p> <p>Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home region.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -257,76 +257,23 @@ paths:
       tags:
       - '#X Amz Target=AWSMigrationHub.AssociateCreatedArtifact'
 components:
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    UnauthorizedOperation: {}
+    ThrottlingException: {}
     MigrationTaskName:
       type: string
       pattern: '[^:|]+'
       minLength: 1
       maxLength: 256
-    InvalidInputException: {}
     AccessDeniedException: {}
+    AssociateCreatedArtifactResult:
+      type: object
+      properties: {}
     CreatedArtifactName:
       type: string
       pattern: arn:[a-z-]+:[a-z0-9-]+:(?:[a-z0-9-]+|):(?:[0-9]{12}|):.*
       minLength: 1
       maxLength: 1600
-    ServiceUnavailableException: {}
-    InternalServerError: {}
-    DryRunOperation: {}
-    ThrottlingException: {}
-    UnauthorizedOperation: {}
-    ProgressUpdateStream:
-      type: string
-      pattern: '[^/:|\000-\037]+'
-      minLength: 1
-      maxLength: 50
-    HomeRegionNotSetException: {}
-    AssociateCreatedArtifactResult:
-      type: object
-      properties: {}
     CreatedArtifact:
       type: object
       required:
@@ -341,14 +288,8 @@ components:
           - $ref: '#/components/schemas/CreatedArtifactDescription'
           - description: A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.
       description: An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.).
-    DryRun:
-      type: boolean
-    ResourceNotFoundException: {}
-    CreatedArtifactDescription:
-      type: string
-      pattern: ^.{0,500}$
-      minLength: 0
-      maxLength: 500
+    DryRunOperation: {}
+    HomeRegionNotSetException: {}
     AssociateCreatedArtifactRequest:
       type: object
       required:
@@ -373,6 +314,65 @@ components:
           allOf:
           - $ref: '#/components/schemas/DryRun'
           - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
+    InternalServerError: {}
+    CreatedArtifactDescription:
+      type: string
+      pattern: ^.{0,500}$
+      minLength: 0
+      maxLength: 500
+    ServiceUnavailableException: {}
+    InvalidInputException: {}
+    DryRun:
+      type: boolean
+    ProgressUpdateStream:
+      type: string
+      pattern: '[^/:|\000-\037]+'
+      minLength: 1
+      maxLength: 50
+    ResourceNotFoundException: {}
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
