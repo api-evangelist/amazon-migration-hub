@@ -1,9 +1,12 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2017-05-31
   x-release: v4
-  title: 'AWS Migration Hub #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.CreateProgressUpdateStream #X Amz Target=AWSMigrationHub.CreateProgressUpdateStream #X Amz Target=AWSMigrationHub.CreateProgressUpdateStream API'
-  description: <p>The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.</p> <p>Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home region.</p>
+  title: 'AWS Migration Hub #X Amz Target=AWSMigrationHub.CreateProgre…'
+  description: 'The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.
+
+
+    Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a HomeRegionNotSetException error will be returned. Also, you must make the API calls while in your home region.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +26,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/AWSMigrationHub-2017-05-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -246,42 +250,21 @@ paths:
       tags:
       - '#X Amz Target=AWSMigrationHub.CreateProgressUpdateStream'
 components:
-  schemas:
-    UnauthorizedOperation: {}
-    ThrottlingException: {}
-    CreateProgressUpdateStreamRequest:
-      type: object
-      required:
-      - ProgressUpdateStreamName
-      title: CreateProgressUpdateStreamRequest
-      properties:
-        ProgressUpdateStreamName:
-          allOf:
-          - $ref: '#/components/schemas/ProgressUpdateStream'
-          - description: 'The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> '
-        DryRun:
-          allOf:
-          - $ref: '#/components/schemas/DryRun'
-          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
-    AccessDeniedException: {}
-    CreateProgressUpdateStreamResult:
-      type: object
-      properties: {}
-    DryRunOperation: {}
-    HomeRegionNotSetException: {}
-    InternalServerError: {}
-    ServiceUnavailableException: {}
-    InvalidInputException: {}
-    DryRun:
-      type: boolean
-    ProgressUpdateStream:
-      type: string
-      pattern: '[^/:|\000-\037]+'
-      minLength: 1
-      maxLength: 50
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -292,8 +275,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -310,18 +293,39 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
+  schemas:
+    InvalidInputException: {}
+    ProgressUpdateStream:
+      type: string
+      pattern: '[^/:|\000-\037]+'
+      minLength: 1
+      maxLength: 50
+    UnauthorizedOperation: {}
+    CreateProgressUpdateStreamRequest:
+      type: object
+      required:
+      - ProgressUpdateStreamName
+      title: CreateProgressUpdateStreamRequest
+      properties:
+        ProgressUpdateStreamName:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: 'The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> '
+        DryRun:
+          allOf:
+          - $ref: '#/components/schemas/DryRun'
+          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
+    HomeRegionNotSetException: {}
+    DryRunOperation: {}
+    ThrottlingException: {}
+    InternalServerError: {}
+    ServiceUnavailableException: {}
+    CreateProgressUpdateStreamResult:
+      type: object
+      properties: {}
+    AccessDeniedException: {}
+    DryRun:
+      type: boolean
   securitySchemes:
     hmac:
       type: apiKey

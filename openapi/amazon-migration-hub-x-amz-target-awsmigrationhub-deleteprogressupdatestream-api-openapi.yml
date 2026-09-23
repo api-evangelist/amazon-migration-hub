@@ -1,9 +1,12 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2017-05-31
   x-release: v4
-  title: 'AWS Migration Hub #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.DeleteProgressUpdateStream #X Amz Target=AWSMigrationHub.DeleteProgressUpdateStream #X Amz Target=AWSMigrationHub.DeleteProgressUpdateStream API'
-  description: <p>The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.</p> <p>Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home region.</p>
+  title: 'AWS Migration Hub #X Amz Target=AWSMigrationHub.DeleteProgre…'
+  description: 'The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.
+
+
+    Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a HomeRegionNotSetException error will be returned. Also, you must make the API calls while in your home region.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +26,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/AWSMigrationHub-2017-05-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +128,22 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: DeleteProgressUpdateStream
-      description: <p>Deletes a progress update stream, including all of its tasks, which was previously created as an AWS resource used for access control. This API has the following traits:</p> <ul> <li> <p>The only parameter needed for <code>DeleteProgressUpdateStream</code> is the stream name (same as a <code>CreateProgressUpdateStream</code> call).</p> </li> <li> <p>The call will return, and a background process will asynchronously delete the stream and all of its resources (tasks, associated resources, resource attributes, created artifacts).</p> </li> <li> <p>If the stream takes time to be deleted, it might still show up on a <code>ListProgressUpdateStreams</code> call.</p> </li> <li> <p> <code>CreateProgressUpdateStream</code>, <code>ImportMigrationTask</code>, <code>NotifyMigrationTaskState</code>, and all Associate[*] APIs related to the tasks belonging to the stream will throw "InvalidInputException" if the stream of the same name is in the process of being deleted.</p> </li> <li> <p>Once the stream and all of its resources are deleted, <code>CreateProgressUpdateStream</code> for a stream of the same name will succeed, and that stream will be an entirely new logical resource (without any resources associated with the old stream).</p> </li> </ul>
+      description: 'Deletes a progress update stream, including all of its tasks, which was previously created as an AWS resource used for access control. This API has the following traits:
+
+
+        The only parameter needed for DeleteProgressUpdateStream is the stream name (same as a CreateProgressUpdateStream call).
+
+
+        The call will return, and a background process will asynchronously delete the stream and all of its resources (tasks, associated resources, resource attributes, created artifacts).
+
+
+        If the stream takes time to be deleted, it might still show up on a ListProgressUpdateStreams call.
+
+
+        CreateProgressUpdateStream, ImportMigrationTask, NotifyMigrationTaskState, and all Associate[*] APIs related to the tasks belonging to the stream will throw "InvalidInputException" if the stream of the same name is in the process of being deleted.
+
+
+        Once the stream and all of its resources are deleted, CreateProgressUpdateStream for a stream of the same name will succeed, and that stream will be an entirely new logical resource (without any resources associated with the old stream).'
       responses:
         '200':
           description: Success
@@ -258,10 +277,21 @@ paths:
       - '#X Amz Target=AWSMigrationHub.DeleteProgressUpdateStream'
 components:
   schemas:
+    ResourceNotFoundException: {}
+    InvalidInputException: {}
+    ProgressUpdateStream:
+      type: string
+      pattern: '[^/:|\000-\037]+'
+      minLength: 1
+      maxLength: 50
     UnauthorizedOperation: {}
-    ThrottlingException: {}
-    AccessDeniedException: {}
+    HomeRegionNotSetException: {}
     DryRunOperation: {}
+    ThrottlingException: {}
+    DeleteProgressUpdateStreamResult:
+      type: object
+      properties: {}
+    InternalServerError: {}
     DeleteProgressUpdateStreamRequest:
       type: object
       required:
@@ -276,24 +306,25 @@ components:
           allOf:
           - $ref: '#/components/schemas/DryRun'
           - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
-    HomeRegionNotSetException: {}
-    InternalServerError: {}
     ServiceUnavailableException: {}
+    AccessDeniedException: {}
     DryRun:
       type: boolean
-    InvalidInputException: {}
-    DeleteProgressUpdateStreamResult:
-      type: object
-      properties: {}
-    ProgressUpdateStream:
-      type: string
-      pattern: '[^/:|\000-\037]+'
-      minLength: 1
-      maxLength: 50
-    ResourceNotFoundException: {}
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -304,8 +335,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -318,18 +349,6 @@ components:
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

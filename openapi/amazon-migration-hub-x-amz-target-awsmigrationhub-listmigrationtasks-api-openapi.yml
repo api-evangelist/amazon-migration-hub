@@ -1,9 +1,12 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2017-05-31
   x-release: v4
-  title: 'AWS Migration Hub #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.AssociateCreatedArtifact #X Amz Target=AWSMigrationHub.ListMigrationTasks #X Amz Target=AWSMigrationHub.ListMigrationTasks #X Amz Target=AWSMigrationHub.ListMigrationTasks API'
-  description: <p>The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.</p> <p>Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home region.</p>
+  title: 'AWS Migration Hub #X Amz Target=AWSMigrationHub.ListMigratio…'
+  description: 'The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.
+
+
+    Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a HomeRegionNotSetException error will be returned. Also, you must make the API calls while in your home region.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +26,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/AWSMigrationHub-2017-05-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +128,16 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: ListMigrationTasks
-      description: <p>Lists all, or filtered by resource name, migration tasks associated with the user account making this call. This API has the following traits:</p> <ul> <li> <p>Can show a summary list of the most recent migration tasks.</p> </li> <li> <p>Can show a summary list of migration tasks associated with a given discovered resource.</p> </li> <li> <p>Lists migration tasks in a paginated interface.</p> </li> </ul>
+      description: 'Lists all, or filtered by resource name, migration tasks associated with the user account making this call. This API has the following traits:
+
+
+        Can show a summary list of the most recent migration tasks.
+
+
+        Can show a summary list of migration tasks associated with a given discovered resource.
+
+
+        Lists migration tasks in a paginated interface.'
       responses:
         '200':
           description: Success
@@ -266,37 +279,54 @@ components:
       pattern: ^.{1,1600}$
       minLength: 1
       maxLength: 1600
+    ResourceNotFoundException: {}
+    InvalidInputException: {}
+    MigrationTaskSummaryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MigrationTaskSummary'
+    ListMigrationTasksRequest:
+      type: object
+      title: ListMigrationTasksRequest
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: Value to specify how many results are returned per page.
+        ResourceName:
+          allOf:
+          - $ref: '#/components/schemas/ResourceName'
+          - description: Filter migration tasks by discovered resource name.
+    UpdateDateTime:
+      type: string
+      format: date-time
+    ProgressUpdateStream:
+      type: string
+      pattern: '[^/:|\000-\037]+'
+      minLength: 1
+      maxLength: 50
+    HomeRegionNotSetException: {}
     MaxResults:
       type: integer
       minimum: 1
       maximum: 100
     ThrottlingException: {}
-    MigrationTaskName:
+    ProgressPercent:
+      type: integer
+      minimum: 0
+      maximum: 100
+    Status:
       type: string
-      pattern: '[^:|]+'
-      minLength: 1
-      maxLength: 256
-    MigrationTaskSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MigrationTaskSummary'
-    AccessDeniedException: {}
-    StatusDetail:
-      type: string
-      pattern: ^.{0,500}$
-      minLength: 0
-      maxLength: 500
-    ListMigrationTasksResult:
-      type: object
-      properties:
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.
-        MigrationTaskSummaryList:
-          allOf:
-          - $ref: '#/components/schemas/MigrationTaskSummaryList'
-          - description: 'Lists the migration task''s summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.'
+      enum:
+      - NOT_STARTED
+      - IN_PROGRESS
+      - FAILED
+      - COMPLETED
+    InternalServerError: {}
     MigrationTaskSummary:
       type: object
       properties:
@@ -325,55 +355,50 @@ components:
           - $ref: '#/components/schemas/UpdateDateTime'
           - description: The timestamp when the task was gathered.
       description: MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code> for each task.
-    Status:
+    MigrationTaskName:
       type: string
-      enum:
-      - NOT_STARTED
-      - IN_PROGRESS
-      - FAILED
-      - COMPLETED
-    HomeRegionNotSetException: {}
-    InternalServerError: {}
-    PolicyErrorException: {}
-    ListMigrationTasksRequest:
-      type: object
-      title: ListMigrationTasksRequest
-      properties:
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: Value to specify how many results are returned per page.
-        ResourceName:
-          allOf:
-          - $ref: '#/components/schemas/ResourceName'
-          - description: Filter migration tasks by discovered resource name.
-    ProgressPercent:
-      type: integer
-      minimum: 0
-      maximum: 100
+      pattern: '[^:|]+'
+      minLength: 1
+      maxLength: 256
     ServiceUnavailableException: {}
-    InvalidInputException: {}
-    UpdateDateTime:
-      type: string
-      format: date-time
     Token:
       type: string
       pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
       minLength: 0
       maxLength: 2048
-    ProgressUpdateStream:
+    ListMigrationTasksResult:
+      type: object
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.
+        MigrationTaskSummaryList:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskSummaryList'
+          - description: 'Lists the migration task''s summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.'
+    AccessDeniedException: {}
+    PolicyErrorException: {}
+    StatusDetail:
       type: string
-      pattern: '[^/:|\000-\037]+'
-      minLength: 1
-      maxLength: 50
-    ResourceNotFoundException: {}
+      pattern: ^.{0,500}$
+      minLength: 0
+      maxLength: 500
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -384,8 +409,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -398,18 +423,6 @@ components:
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
