@@ -2552,123 +2552,17 @@ paths:
       - AWS Migration Hub
 components:
   schemas:
-    DeleteProgressUpdateStreamRequest:
-      type: object
-      required:
-      - ProgressUpdateStreamName
-      title: DeleteProgressUpdateStreamRequest
-      properties:
-        ProgressUpdateStreamName:
-          allOf:
-          - $ref: '#/components/schemas/ProgressUpdateStream'
-          - description: 'The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> '
-        DryRun:
-          allOf:
-          - $ref: '#/components/schemas/DryRun'
-          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
-    UnauthorizedOperation: {}
-    ResourceAttributeList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ResourceAttribute'
-      minItems: 1
-      maxItems: 100
-    CreateProgressUpdateStreamResult:
-      type: object
-      properties: {}
-    AssociateDiscoveredResourceRequest:
-      type: object
-      required:
-      - ProgressUpdateStream
-      - MigrationTaskName
-      - DiscoveredResource
-      title: AssociateDiscoveredResourceRequest
-      properties:
-        ProgressUpdateStream:
-          allOf:
-          - $ref: '#/components/schemas/ProgressUpdateStream'
-          - description: The name of the ProgressUpdateStream.
-        MigrationTaskName:
-          allOf:
-          - $ref: '#/components/schemas/MigrationTaskName'
-          - description: 'The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> '
-        DiscoveredResource:
-          allOf:
-          - $ref: '#/components/schemas/DiscoveredResource'
-          - description: Object representing a Resource.
-        DryRun:
-          allOf:
-          - $ref: '#/components/schemas/DryRun'
-          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
-    AssociateDiscoveredResourceResult:
-      type: object
-      properties: {}
-    ThrottlingException: {}
-    MaxResultsResources:
-      type: integer
-      minimum: 1
-      maximum: 10
-    MigrationTaskSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MigrationTaskSummary'
-    ApplicationStatus:
-      type: string
-      enum:
-      - NOT_STARTED
-      - IN_PROGRESS
-      - COMPLETED
-    MigrationTaskSummary:
+    ListProgressUpdateStreamsResult:
       type: object
       properties:
-        ProgressUpdateStream:
+        ProgressUpdateStreamSummaryList:
           allOf:
-          - $ref: '#/components/schemas/ProgressUpdateStream'
-          - description: An AWS resource used for access control. It should uniquely identify the migration tool as it is used for all updates made by the tool.
-        MigrationTaskName:
-          allOf:
-          - $ref: '#/components/schemas/MigrationTaskName'
-          - description: 'Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> '
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/Status'
-          - description: Status of the task.
-        ProgressPercent:
-          allOf:
-          - $ref: '#/components/schemas/ProgressPercent'
-          - description: Indication of the percentage completion of the task.
-        StatusDetail:
-          allOf:
-          - $ref: '#/components/schemas/StatusDetail'
-          - description: Detail information of what is being done within the overall status state.
-        UpdateDateTime:
-          allOf:
-          - $ref: '#/components/schemas/UpdateDateTime'
-          - description: The timestamp when the task was gathered.
-      description: MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code> for each task.
-    ListDiscoveredResourcesRequest:
-      type: object
-      required:
-      - ProgressUpdateStream
-      - MigrationTaskName
-      title: ListDiscoveredResourcesRequest
-      properties:
-        ProgressUpdateStream:
-          allOf:
-          - $ref: '#/components/schemas/ProgressUpdateStream'
-          - description: The name of the ProgressUpdateStream.
-        MigrationTaskName:
-          allOf:
-          - $ref: '#/components/schemas/MigrationTaskName'
-          - description: 'The name of the MigrationTask. <i>Do not store personal data in this field.</i> '
+          - $ref: '#/components/schemas/ProgressUpdateStreamSummaryList'
+          - description: List of progress update streams up to the max number of results passed in the input.
         NextToken:
           allOf:
           - $ref: '#/components/schemas/Token'
-          - description: If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResultsResources'
-          - description: The maximum number of results returned per page.
+          - description: If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.
     ListApplicationStatesResult:
       type: object
       properties:
@@ -2680,70 +2574,42 @@ components:
           allOf:
           - $ref: '#/components/schemas/Token'
           - description: If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.
-    CreatedArtifactName:
-      type: string
-      pattern: arn:[a-z-]+:[a-z0-9-]+:(?:[a-z0-9-]+|):(?:[0-9]{12}|):.*
-      minLength: 1
-      maxLength: 1600
-    CreatedArtifactDescription:
-      type: string
-      pattern: ^.{0,500}$
-      minLength: 0
-      maxLength: 500
-    ListProgressUpdateStreamsRequest:
-      type: object
-      title: ListProgressUpdateStreamsRequest
-      properties:
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: Filter to limit the maximum number of results to list per page.
-    CreateProgressUpdateStreamRequest:
+    Task:
       type: object
       required:
-      - ProgressUpdateStreamName
-      title: CreateProgressUpdateStreamRequest
+      - Status
       properties:
-        ProgressUpdateStreamName:
+        Status:
           allOf:
-          - $ref: '#/components/schemas/ProgressUpdateStream'
-          - description: 'The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> '
-        DryRun:
+          - $ref: '#/components/schemas/Status'
+          - description: Status of the task - Not Started, In-Progress, Complete.
+        StatusDetail:
           allOf:
-          - $ref: '#/components/schemas/DryRun'
-          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
-    NextUpdateSeconds:
-      type: integer
-      minimum: 0
+          - $ref: '#/components/schemas/StatusDetail'
+          - description: Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.
+        ProgressPercent:
+          allOf:
+          - $ref: '#/components/schemas/ProgressPercent'
+          - description: Indication of the percentage completion of the task.
+      description: Task object encapsulating task information.
+    DescribeApplicationStateRequest:
+      type: object
+      required:
+      - ApplicationId
+      title: DescribeApplicationStateRequest
+      properties:
+        ApplicationId:
+          allOf:
+          - $ref: '#/components/schemas/ApplicationId'
+          - description: The configurationId in Application Discovery Service that uniquely identifies the grouped application.
     StatusDetail:
       type: string
       pattern: ^.{0,500}$
       minLength: 0
       maxLength: 500
-    InternalServerError: {}
-    HomeRegionNotSetException: {}
-    ImportMigrationTaskResult:
+    DisassociateDiscoveredResourceResult:
       type: object
       properties: {}
-    ListCreatedArtifactsResult:
-      type: object
-      properties:
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.
-        CreatedArtifactList:
-          allOf:
-          - $ref: '#/components/schemas/CreatedArtifactList'
-          - description: List of created artifacts up to the maximum number of results specified in the request.
-    ProgressPercent:
-      type: integer
-      minimum: 0
-      maximum: 100
     ProgressUpdateStreamSummary:
       type: object
       properties:
@@ -2752,12 +2618,6 @@ components:
           - $ref: '#/components/schemas/ProgressUpdateStream'
           - description: 'The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> '
       description: Summary of the AWS resource used for access control that is implicitly linked to your AWS account.
-    LatestResourceAttributeList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ResourceAttribute'
-      minItems: 0
-      maxItems: 100
     PutResourceAttributesRequest:
       type: object
       required:
@@ -2782,199 +2642,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/DryRun'
           - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
-    ListProgressUpdateStreamsResult:
-      type: object
-      properties:
-        ProgressUpdateStreamSummaryList:
-          allOf:
-          - $ref: '#/components/schemas/ProgressUpdateStreamSummaryList'
-          - description: List of progress update streams up to the max number of results passed in the input.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.
-    ApplicationState:
-      type: object
-      properties:
-        ApplicationId:
-          allOf:
-          - $ref: '#/components/schemas/ApplicationId'
-          - description: The configurationId from the Application Discovery Service that uniquely identifies an application.
-        ApplicationStatus:
-          allOf:
-          - $ref: '#/components/schemas/ApplicationStatus'
-          - description: The current status of an application.
-        LastUpdatedTime:
-          allOf:
-          - $ref: '#/components/schemas/UpdateDateTime'
-          - description: The timestamp when the application status was last updated.
-      description: The state of an application discovered through Migration Hub import, the AWS Agentless Discovery Connector, or the AWS Application Discovery Agent.
-    ProgressUpdateStreamSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ProgressUpdateStreamSummary'
-    InvalidInputException: {}
-    AssociateCreatedArtifactRequest:
-      type: object
-      required:
-      - ProgressUpdateStream
-      - MigrationTaskName
-      - CreatedArtifact
-      title: AssociateCreatedArtifactRequest
-      properties:
-        ProgressUpdateStream:
-          allOf:
-          - $ref: '#/components/schemas/ProgressUpdateStream'
-          - description: 'The name of the ProgressUpdateStream. '
-        MigrationTaskName:
-          allOf:
-          - $ref: '#/components/schemas/MigrationTaskName'
-          - description: 'Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> '
-        CreatedArtifact:
-          allOf:
-          - $ref: '#/components/schemas/CreatedArtifact'
-          - description: 'An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) '
-        DryRun:
-          allOf:
-          - $ref: '#/components/schemas/DryRun'
-          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
-    MigrationTaskName:
-      type: string
-      pattern: '[^:|]+'
-      minLength: 1
-      maxLength: 256
-    DiscoveredResource:
-      type: object
-      required:
-      - ConfigurationId
-      properties:
-        ConfigurationId:
-          allOf:
-          - $ref: '#/components/schemas/ConfigurationId'
-          - description: The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/DiscoveredResourceDescription'
-          - description: A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.
-      description: Object representing the on-premises resource being migrated.
-    PolicyErrorException: {}
-    MigrationTask:
-      type: object
-      properties:
-        ProgressUpdateStream:
-          allOf:
-          - $ref: '#/components/schemas/ProgressUpdateStream'
-          - description: A name that identifies the vendor of the migration tool being used.
-        MigrationTaskName:
-          allOf:
-          - $ref: '#/components/schemas/MigrationTaskName'
-          - description: 'Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> '
-        Task:
-          allOf:
-          - $ref: '#/components/schemas/Task'
-          - description: Task object encapsulating task information.
-        UpdateDateTime:
-          allOf:
-          - $ref: '#/components/schemas/UpdateDateTime'
-          - description: The timestamp when the task was gathered.
-        ResourceAttributeList:
-          allOf:
-          - $ref: '#/components/schemas/LatestResourceAttributeList'
-          - description: Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.
-      description: Represents a migration task in a migration tool.
-    MaxResultsCreatedArtifacts:
-      type: integer
-      minimum: 1
-      maximum: 10
-    ApplicationStateList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ApplicationState'
-      minItems: 0
-      maxItems: 1000
-    AccessDeniedException: {}
-    ListApplicationStatesRequest:
-      type: object
-      title: ListApplicationStatesRequest
-      properties:
-        ApplicationIds:
-          allOf:
-          - $ref: '#/components/schemas/ApplicationIds'
-          - description: The configurationIds from the Application Discovery Service that uniquely identifies your applications.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: Maximum number of results to be returned per page.
-    DiscoveredResourceDescription:
-      type: string
-      pattern: ^.{0,500}$
-      minLength: 0
-      maxLength: 500
-    DryRun:
-      type: boolean
-    ListDiscoveredResourcesResult:
-      type: object
-      properties:
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.
-        DiscoveredResourceList:
-          allOf:
-          - $ref: '#/components/schemas/DiscoveredResourceList'
-          - description: Returned list of discovered resources associated with the given MigrationTask.
-    ImportMigrationTaskRequest:
-      type: object
-      required:
-      - ProgressUpdateStream
-      - MigrationTaskName
-      title: ImportMigrationTaskRequest
-      properties:
-        ProgressUpdateStream:
-          allOf:
-          - $ref: '#/components/schemas/ProgressUpdateStream'
-          - description: The name of the ProgressUpdateStream. &gt;
-        MigrationTaskName:
-          allOf:
-          - $ref: '#/components/schemas/MigrationTaskName'
-          - description: 'Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> '
-        DryRun:
-          allOf:
-          - $ref: '#/components/schemas/DryRun'
-          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
-    ResourceAttribute:
-      type: object
-      required:
-      - Type
-      - Value
-      properties:
-        Type:
-          allOf:
-          - $ref: '#/components/schemas/ResourceAttributeType'
-          - description: Type of resource.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/ResourceAttributeValue'
-          - description: Value of the resource type.
-      description: '<p>Attribute associated with a resource.</p> <p>Note the corresponding format required per type listed below:</p> <dl> <dt>IPV4</dt> <dd> <p> <code>x.x.x.x</code> </p> <p> <i>where x is an integer in the range [0,255]</i> </p> </dd> <dt>IPV6</dt> <dd> <p> <code>y : y : y : y : y : y : y : y</code> </p> <p> <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i> </p> </dd> <dt>MAC_ADDRESS</dt> <dd> <p> <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</code> </p> </dd> <dt>FQDN</dt> <dd> <p> <code>^[^&lt;&gt;{}\\\\/?,=\\p{Cntrl}]{1,256}$</code> </p> </dd> </dl>'
-    DisassociateCreatedArtifactResult:
-      type: object
-      properties: {}
-    ProgressUpdateStream:
-      type: string
-      pattern: '[^/:|\000-\037]+'
-      minLength: 1
-      maxLength: 50
-    ApplicationIds:
-      type: array
-      items:
-        $ref: '#/components/schemas/ApplicationId'
-      minItems: 1
-      maxItems: 100
     Status:
       type: string
       enum:
@@ -2982,241 +2649,27 @@ components:
       - IN_PROGRESS
       - FAILED
       - COMPLETED
-    DisassociateDiscoveredResourceRequest:
-      type: object
-      required:
-      - ProgressUpdateStream
-      - MigrationTaskName
-      - ConfigurationId
-      title: DisassociateDiscoveredResourceRequest
-      properties:
-        ProgressUpdateStream:
-          allOf:
-          - $ref: '#/components/schemas/ProgressUpdateStream'
-          - description: The name of the ProgressUpdateStream.
-        MigrationTaskName:
-          allOf:
-          - $ref: '#/components/schemas/MigrationTaskName'
-          - description: 'The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> '
-        ConfigurationId:
-          allOf:
-          - $ref: '#/components/schemas/ConfigurationId'
-          - description: ConfigurationId of the Application Discovery Service resource to be disassociated.
-        DryRun:
-          allOf:
-          - $ref: '#/components/schemas/DryRun'
-          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
-    NotifyMigrationTaskStateResult:
-      type: object
-      properties: {}
-    DescribeMigrationTaskRequest:
-      type: object
-      required:
-      - ProgressUpdateStream
-      - MigrationTaskName
-      title: DescribeMigrationTaskRequest
-      properties:
-        ProgressUpdateStream:
-          allOf:
-          - $ref: '#/components/schemas/ProgressUpdateStream'
-          - description: 'The name of the ProgressUpdateStream. '
-        MigrationTaskName:
-          allOf:
-          - $ref: '#/components/schemas/MigrationTaskName'
-          - description: 'The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> '
-    MaxResults:
-      type: integer
-      minimum: 1
-      maximum: 100
-    NotifyApplicationStateRequest:
-      type: object
-      required:
-      - ApplicationId
-      - Status
-      title: NotifyApplicationStateRequest
-      properties:
-        ApplicationId:
-          allOf:
-          - $ref: '#/components/schemas/ApplicationId'
-          - description: The configurationId in Application Discovery Service that uniquely identifies the grouped application.
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/ApplicationStatus'
-          - description: Status of the application - Not Started, In-Progress, Complete.
-        UpdateDateTime:
-          allOf:
-          - $ref: '#/components/schemas/UpdateDateTime'
-          - description: The timestamp when the application state changed.
-        DryRun:
-          allOf:
-          - $ref: '#/components/schemas/DryRun'
-          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
-    NotifyApplicationStateResult:
-      type: object
-      properties: {}
-    DescribeApplicationStateResult:
-      type: object
-      properties:
-        ApplicationStatus:
-          allOf:
-          - $ref: '#/components/schemas/ApplicationStatus'
-          - description: Status of the application - Not Started, In-Progress, Complete.
-        LastUpdatedTime:
-          allOf:
-          - $ref: '#/components/schemas/UpdateDateTime'
-          - description: The timestamp when the application status was last updated.
-    ConfigurationId:
-      type: string
-      pattern: ^.{1,1600}$
-      minLength: 1
-      maxLength: 1600
-    ListMigrationTasksResult:
-      type: object
-      properties:
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.
-        MigrationTaskSummaryList:
-          allOf:
-          - $ref: '#/components/schemas/MigrationTaskSummaryList'
-          - description: 'Lists the migration task''s summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.'
-    ResourceNotFoundException: {}
-    AssociateCreatedArtifactResult:
-      type: object
-      properties: {}
-    Token:
-      type: string
-      pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
-      minLength: 0
-      maxLength: 2048
-    CreatedArtifact:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/CreatedArtifactName'
-          - description: An ARN that uniquely identifies the result of a migration task.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/CreatedArtifactDescription'
-          - description: A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.
-      description: An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.).
-    DryRunOperation: {}
-    ApplicationId:
-      type: string
-      pattern: ^.{1,1600}$
-      minLength: 1
-      maxLength: 1600
-    DisassociateCreatedArtifactRequest:
-      type: object
-      required:
-      - ProgressUpdateStream
-      - MigrationTaskName
-      - CreatedArtifactName
-      title: DisassociateCreatedArtifactRequest
-      properties:
-        ProgressUpdateStream:
-          allOf:
-          - $ref: '#/components/schemas/ProgressUpdateStream'
-          - description: 'The name of the ProgressUpdateStream. '
-        MigrationTaskName:
-          allOf:
-          - $ref: '#/components/schemas/MigrationTaskName'
-          - description: 'Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> '
-        CreatedArtifactName:
-          allOf:
-          - $ref: '#/components/schemas/CreatedArtifactName'
-          - description: An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)
-        DryRun:
-          allOf:
-          - $ref: '#/components/schemas/DryRun'
-          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
-    UpdateDateTime:
-      type: string
-      format: date-time
-    ResourceAttributeType:
+    ApplicationStatus:
       type: string
       enum:
-      - IPV4_ADDRESS
-      - IPV6_ADDRESS
-      - MAC_ADDRESS
-      - FQDN
-      - VM_MANAGER_ID
-      - VM_MANAGED_OBJECT_REFERENCE
-      - VM_NAME
-      - VM_PATH
-      - BIOS_ID
-      - MOTHERBOARD_SERIAL_NUMBER
-    DiscoveredResourceList:
+      - NOT_STARTED
+      - IN_PROGRESS
+      - COMPLETED
+    MigrationTaskSummaryList:
       type: array
       items:
-        $ref: '#/components/schemas/DiscoveredResource'
-    ResourceName:
-      type: string
-      pattern: ^.{1,1600}$
-      minLength: 1
-      maxLength: 1600
-    ServiceUnavailableException: {}
-    Task:
+        $ref: '#/components/schemas/MigrationTaskSummary'
+    ListCreatedArtifactsResult:
       type: object
-      required:
-      - Status
-      properties:
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/Status'
-          - description: Status of the task - Not Started, In-Progress, Complete.
-        StatusDetail:
-          allOf:
-          - $ref: '#/components/schemas/StatusDetail'
-          - description: Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.
-        ProgressPercent:
-          allOf:
-          - $ref: '#/components/schemas/ProgressPercent'
-          - description: Indication of the percentage completion of the task.
-      description: Task object encapsulating task information.
-    DescribeMigrationTaskResult:
-      type: object
-      properties:
-        MigrationTask:
-          allOf:
-          - $ref: '#/components/schemas/MigrationTask'
-          - description: Object encapsulating information about the migration task.
-    DisassociateDiscoveredResourceResult:
-      type: object
-      properties: {}
-    ListMigrationTasksRequest:
-      type: object
-      title: ListMigrationTasksRequest
       properties:
         NextToken:
           allOf:
           - $ref: '#/components/schemas/Token'
-          - description: If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.
-        MaxResults:
+          - description: If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.
+        CreatedArtifactList:
           allOf:
-          - $ref: '#/components/schemas/MaxResults'
-          - description: Value to specify how many results are returned per page.
-        ResourceName:
-          allOf:
-          - $ref: '#/components/schemas/ResourceName'
-          - description: Filter migration tasks by discovered resource name.
-    PutResourceAttributesResult:
-      type: object
-      properties: {}
-    DescribeApplicationStateRequest:
-      type: object
-      required:
-      - ApplicationId
-      title: DescribeApplicationStateRequest
-      properties:
-        ApplicationId:
-          allOf:
-          - $ref: '#/components/schemas/ApplicationId'
-          - description: The configurationId in Application Discovery Service that uniquely identifies the grouped application.
+          - $ref: '#/components/schemas/CreatedArtifactList'
+          - description: List of created artifacts up to the maximum number of results specified in the request.
     NotifyMigrationTaskStateRequest:
       type: object
       required:
@@ -3251,18 +2704,484 @@ components:
           allOf:
           - $ref: '#/components/schemas/DryRun'
           - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
-    DeleteProgressUpdateStreamResult:
+    NotifyMigrationTaskStateResult:
       type: object
       properties: {}
-    CreatedArtifactList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CreatedArtifact'
+    DescribeApplicationStateResult:
+      type: object
+      properties:
+        ApplicationStatus:
+          allOf:
+          - $ref: '#/components/schemas/ApplicationStatus'
+          - description: Status of the application - Not Started, In-Progress, Complete.
+        LastUpdatedTime:
+          allOf:
+          - $ref: '#/components/schemas/UpdateDateTime'
+          - description: The timestamp when the application status was last updated.
+    NextUpdateSeconds:
+      type: integer
+      minimum: 0
+    UpdateDateTime:
+      type: string
+      format: date-time
+    AccessDeniedException: {}
+    ListDiscoveredResourcesResult:
+      type: object
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.
+        DiscoveredResourceList:
+          allOf:
+          - $ref: '#/components/schemas/DiscoveredResourceList'
+          - description: Returned list of discovered resources associated with the given MigrationTask.
+    ListDiscoveredResourcesRequest:
+      type: object
+      required:
+      - ProgressUpdateStream
+      - MigrationTaskName
+      title: ListDiscoveredResourcesRequest
+      properties:
+        ProgressUpdateStream:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: The name of the ProgressUpdateStream.
+        MigrationTaskName:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskName'
+          - description: 'The name of the MigrationTask. <i>Do not store personal data in this field.</i> '
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResultsResources'
+          - description: The maximum number of results returned per page.
+    NotifyApplicationStateRequest:
+      type: object
+      required:
+      - ApplicationId
+      - Status
+      title: NotifyApplicationStateRequest
+      properties:
+        ApplicationId:
+          allOf:
+          - $ref: '#/components/schemas/ApplicationId'
+          - description: The configurationId in Application Discovery Service that uniquely identifies the grouped application.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/ApplicationStatus'
+          - description: Status of the application - Not Started, In-Progress, Complete.
+        UpdateDateTime:
+          allOf:
+          - $ref: '#/components/schemas/UpdateDateTime'
+          - description: The timestamp when the application state changed.
+        DryRun:
+          allOf:
+          - $ref: '#/components/schemas/DryRun'
+          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
     ResourceAttributeValue:
       type: string
       pattern: ^.{1,256}$
       minLength: 1
       maxLength: 256
+    HomeRegionNotSetException: {}
+    UnauthorizedOperation: {}
+    ListApplicationStatesRequest:
+      type: object
+      title: ListApplicationStatesRequest
+      properties:
+        ApplicationIds:
+          allOf:
+          - $ref: '#/components/schemas/ApplicationIds'
+          - description: The configurationIds from the Application Discovery Service that uniquely identifies your applications.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: Maximum number of results to be returned per page.
+    MaxResults:
+      type: integer
+      minimum: 1
+      maximum: 100
+    CreatedArtifactDescription:
+      type: string
+      pattern: ^.{0,500}$
+      minLength: 0
+      maxLength: 500
+    MigrationTaskName:
+      type: string
+      pattern: '[^:|]+'
+      minLength: 1
+      maxLength: 256
+    DeleteProgressUpdateStreamResult:
+      type: object
+      properties: {}
+    MaxResultsCreatedArtifacts:
+      type: integer
+      minimum: 1
+      maximum: 10
+    DisassociateCreatedArtifactResult:
+      type: object
+      properties: {}
+    ResourceNotFoundException: {}
+    ListMigrationTasksRequest:
+      type: object
+      title: ListMigrationTasksRequest
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: Value to specify how many results are returned per page.
+        ResourceName:
+          allOf:
+          - $ref: '#/components/schemas/ResourceName'
+          - description: Filter migration tasks by discovered resource name.
+    DeleteProgressUpdateStreamRequest:
+      type: object
+      required:
+      - ProgressUpdateStreamName
+      title: DeleteProgressUpdateStreamRequest
+      properties:
+        ProgressUpdateStreamName:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: 'The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> '
+        DryRun:
+          allOf:
+          - $ref: '#/components/schemas/DryRun'
+          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
+    ListProgressUpdateStreamsRequest:
+      type: object
+      title: ListProgressUpdateStreamsRequest
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResults'
+          - description: Filter to limit the maximum number of results to list per page.
+    CreatedArtifactName:
+      type: string
+      pattern: arn:[a-z-]+:[a-z0-9-]+:(?:[a-z0-9-]+|):(?:[0-9]{12}|):.*
+      minLength: 1
+      maxLength: 1600
+    CreatedArtifact:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/CreatedArtifactName'
+          - description: An ARN that uniquely identifies the result of a migration task.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/CreatedArtifactDescription'
+          - description: A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.
+      description: An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.).
+    DisassociateCreatedArtifactRequest:
+      type: object
+      required:
+      - ProgressUpdateStream
+      - MigrationTaskName
+      - CreatedArtifactName
+      title: DisassociateCreatedArtifactRequest
+      properties:
+        ProgressUpdateStream:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: 'The name of the ProgressUpdateStream. '
+        MigrationTaskName:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskName'
+          - description: 'Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> '
+        CreatedArtifactName:
+          allOf:
+          - $ref: '#/components/schemas/CreatedArtifactName'
+          - description: An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)
+        DryRun:
+          allOf:
+          - $ref: '#/components/schemas/DryRun'
+          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
+    ApplicationStateList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ApplicationState'
+      minItems: 0
+      maxItems: 1000
+    DryRun:
+      type: boolean
+    MigrationTask:
+      type: object
+      properties:
+        ProgressUpdateStream:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: A name that identifies the vendor of the migration tool being used.
+        MigrationTaskName:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskName'
+          - description: 'Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> '
+        Task:
+          allOf:
+          - $ref: '#/components/schemas/Task'
+          - description: Task object encapsulating task information.
+        UpdateDateTime:
+          allOf:
+          - $ref: '#/components/schemas/UpdateDateTime'
+          - description: The timestamp when the task was gathered.
+        ResourceAttributeList:
+          allOf:
+          - $ref: '#/components/schemas/LatestResourceAttributeList'
+          - description: Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.
+      description: Represents a migration task in a migration tool.
+    DisassociateDiscoveredResourceRequest:
+      type: object
+      required:
+      - ProgressUpdateStream
+      - MigrationTaskName
+      - ConfigurationId
+      title: DisassociateDiscoveredResourceRequest
+      properties:
+        ProgressUpdateStream:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: The name of the ProgressUpdateStream.
+        MigrationTaskName:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskName'
+          - description: 'The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> '
+        ConfigurationId:
+          allOf:
+          - $ref: '#/components/schemas/ConfigurationId'
+          - description: ConfigurationId of the Application Discovery Service resource to be disassociated.
+        DryRun:
+          allOf:
+          - $ref: '#/components/schemas/DryRun'
+          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
+    ApplicationState:
+      type: object
+      properties:
+        ApplicationId:
+          allOf:
+          - $ref: '#/components/schemas/ApplicationId'
+          - description: The configurationId from the Application Discovery Service that uniquely identifies an application.
+        ApplicationStatus:
+          allOf:
+          - $ref: '#/components/schemas/ApplicationStatus'
+          - description: The current status of an application.
+        LastUpdatedTime:
+          allOf:
+          - $ref: '#/components/schemas/UpdateDateTime'
+          - description: The timestamp when the application status was last updated.
+      description: The state of an application discovered through Migration Hub import, the AWS Agentless Discovery Connector, or the AWS Application Discovery Agent.
+    CreateProgressUpdateStreamRequest:
+      type: object
+      required:
+      - ProgressUpdateStreamName
+      title: CreateProgressUpdateStreamRequest
+      properties:
+        ProgressUpdateStreamName:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: 'The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> '
+        DryRun:
+          allOf:
+          - $ref: '#/components/schemas/DryRun'
+          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
+    CreatedArtifactList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CreatedArtifact'
+    Token:
+      type: string
+      pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
+      minLength: 0
+      maxLength: 2048
+    ProgressPercent:
+      type: integer
+      minimum: 0
+      maximum: 100
+    ResourceName:
+      type: string
+      pattern: ^.{1,1600}$
+      minLength: 1
+      maxLength: 1600
+    ResourceAttributeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResourceAttribute'
+      minItems: 1
+      maxItems: 100
+    ApplicationIds:
+      type: array
+      items:
+        $ref: '#/components/schemas/ApplicationId'
+      minItems: 1
+      maxItems: 100
+    ResourceAttributeType:
+      type: string
+      enum:
+      - IPV4_ADDRESS
+      - IPV6_ADDRESS
+      - MAC_ADDRESS
+      - FQDN
+      - VM_MANAGER_ID
+      - VM_MANAGED_OBJECT_REFERENCE
+      - VM_NAME
+      - VM_PATH
+      - BIOS_ID
+      - MOTHERBOARD_SERIAL_NUMBER
+    AssociateCreatedArtifactRequest:
+      type: object
+      required:
+      - ProgressUpdateStream
+      - MigrationTaskName
+      - CreatedArtifact
+      title: AssociateCreatedArtifactRequest
+      properties:
+        ProgressUpdateStream:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: 'The name of the ProgressUpdateStream. '
+        MigrationTaskName:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskName'
+          - description: 'Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> '
+        CreatedArtifact:
+          allOf:
+          - $ref: '#/components/schemas/CreatedArtifact'
+          - description: 'An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) '
+        DryRun:
+          allOf:
+          - $ref: '#/components/schemas/DryRun'
+          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
+    AssociateDiscoveredResourceRequest:
+      type: object
+      required:
+      - ProgressUpdateStream
+      - MigrationTaskName
+      - DiscoveredResource
+      title: AssociateDiscoveredResourceRequest
+      properties:
+        ProgressUpdateStream:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: The name of the ProgressUpdateStream.
+        MigrationTaskName:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskName'
+          - description: 'The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> '
+        DiscoveredResource:
+          allOf:
+          - $ref: '#/components/schemas/DiscoveredResource'
+          - description: Object representing a Resource.
+        DryRun:
+          allOf:
+          - $ref: '#/components/schemas/DryRun'
+          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
+    ServiceUnavailableException: {}
+    InvalidInputException: {}
+    LatestResourceAttributeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResourceAttribute'
+      minItems: 0
+      maxItems: 100
+    MaxResultsResources:
+      type: integer
+      minimum: 1
+      maximum: 10
+    NotifyApplicationStateResult:
+      type: object
+      properties: {}
+    ImportMigrationTaskRequest:
+      type: object
+      required:
+      - ProgressUpdateStream
+      - MigrationTaskName
+      title: ImportMigrationTaskRequest
+      properties:
+        ProgressUpdateStream:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: The name of the ProgressUpdateStream. &gt;
+        MigrationTaskName:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskName'
+          - description: 'Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> '
+        DryRun:
+          allOf:
+          - $ref: '#/components/schemas/DryRun'
+          - description: Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.
+    DescribeMigrationTaskRequest:
+      type: object
+      required:
+      - ProgressUpdateStream
+      - MigrationTaskName
+      title: DescribeMigrationTaskRequest
+      properties:
+        ProgressUpdateStream:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: 'The name of the ProgressUpdateStream. '
+        MigrationTaskName:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskName'
+          - description: 'The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> '
+    ProgressUpdateStreamSummaryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProgressUpdateStreamSummary'
+    ThrottlingException: {}
+    DiscoveredResourceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DiscoveredResource'
+    DiscoveredResourceDescription:
+      type: string
+      pattern: ^.{0,500}$
+      minLength: 0
+      maxLength: 500
+    ApplicationId:
+      type: string
+      pattern: ^.{1,1600}$
+      minLength: 1
+      maxLength: 1600
+    PolicyErrorException: {}
+    AssociateCreatedArtifactResult:
+      type: object
+      properties: {}
+    PutResourceAttributesResult:
+      type: object
+      properties: {}
+    InternalServerError: {}
+    DiscoveredResource:
+      type: object
+      required:
+      - ConfigurationId
+      properties:
+        ConfigurationId:
+          allOf:
+          - $ref: '#/components/schemas/ConfigurationId'
+          - description: The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/DiscoveredResourceDescription'
+          - description: A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.
+      description: Object representing the on-premises resource being migrated.
     ListCreatedArtifactsRequest:
       type: object
       required:
@@ -3286,33 +3205,90 @@ components:
           allOf:
           - $ref: '#/components/schemas/MaxResultsCreatedArtifacts'
           - description: Maximum number of results to be returned per page.
+    MigrationTaskSummary:
+      type: object
+      properties:
+        ProgressUpdateStream:
+          allOf:
+          - $ref: '#/components/schemas/ProgressUpdateStream'
+          - description: An AWS resource used for access control. It should uniquely identify the migration tool as it is used for all updates made by the tool.
+        MigrationTaskName:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskName'
+          - description: 'Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> '
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - description: Status of the task.
+        ProgressPercent:
+          allOf:
+          - $ref: '#/components/schemas/ProgressPercent'
+          - description: Indication of the percentage completion of the task.
+        StatusDetail:
+          allOf:
+          - $ref: '#/components/schemas/StatusDetail'
+          - description: Detail information of what is being done within the overall status state.
+        UpdateDateTime:
+          allOf:
+          - $ref: '#/components/schemas/UpdateDateTime'
+          - description: The timestamp when the task was gathered.
+      description: MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code> for each task.
+    ConfigurationId:
+      type: string
+      pattern: ^.{1,1600}$
+      minLength: 1
+      maxLength: 1600
+    ProgressUpdateStream:
+      type: string
+      pattern: '[^/:|\000-\037]+'
+      minLength: 1
+      maxLength: 50
+    ResourceAttribute:
+      type: object
+      required:
+      - Type
+      - Value
+      properties:
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/ResourceAttributeType'
+          - description: Type of resource.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/ResourceAttributeValue'
+          - description: Value of the resource type.
+      description: '<p>Attribute associated with a resource.</p> <p>Note the corresponding format required per type listed below:</p> <dl> <dt>IPV4</dt> <dd> <p> <code>x.x.x.x</code> </p> <p> <i>where x is an integer in the range [0,255]</i> </p> </dd> <dt>IPV6</dt> <dd> <p> <code>y : y : y : y : y : y : y : y</code> </p> <p> <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i> </p> </dd> <dt>MAC_ADDRESS</dt> <dd> <p> <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</code> </p> </dd> <dt>FQDN</dt> <dd> <p> <code>^[^&lt;&gt;{}\\\\/?,=\\p{Cntrl}]{1,256}$</code> </p> </dd> </dl>'
+    CreateProgressUpdateStreamResult:
+      type: object
+      properties: {}
+    DryRunOperation: {}
+    ImportMigrationTaskResult:
+      type: object
+      properties: {}
+    DescribeMigrationTaskResult:
+      type: object
+      properties:
+        MigrationTask:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTask'
+          - description: Object encapsulating information about the migration task.
+    ListMigrationTasksResult:
+      type: object
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.
+        MigrationTaskSummaryList:
+          allOf:
+          - $ref: '#/components/schemas/MigrationTaskSummaryList'
+          - description: 'Lists the migration task''s summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.'
+    AssociateDiscoveredResourceResult:
+      type: object
+      properties: {}
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -3323,8 +3299,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
