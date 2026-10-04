@@ -1,0 +1,25 @@
+slug: amazon-migration-hub
+provider: Amazon Migration Hub
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: AWS Migration Hub
+  spec_file: amazon-migration-hub-aws-migration-hub-api-openapi.yml
+  capability_id: BC-600
+  capability_id_l1: BC-600
+  capability_name: Information Technology Management
+  confidence: 0.7
+  evidence: The AWS Migration Hub API methods help to obtain server and application migration status;
+    DescribeMigrationTask, ListApplicationStates, CreateProgressUpdateStream
+  reason: Tracks progress of server/application migrations to the cloud — an IT management concern. Ambiguous
+    between IT portfolio/demand and IT application management, so only the L1 is asserted.
