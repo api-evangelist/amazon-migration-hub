@@ -1,15 +1,33 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/amazon-migration-hub-openapi-original.yml
+source: openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-associatecreatedartifact-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-associatediscoveredresource-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-createprogressupdatestream-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-deleteprogressupdatestream-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-describeapplicationstate-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-describemigrationtask-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-disassociatecreatedartifact-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-disassociatediscoveredresource-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-importmigrationtask-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-listapplicationstates-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-listcreatedartifacts-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-listdiscoveredresources-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-listmigrationtasks-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-listprogressupdatestreams-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-notifyapplicationstate-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-notifymigrationtaskstate-api-openapi.yml,
+  openapi/amazon-migration-hub-x-amz-target-awsmigrationhub-putresourceattributes-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 17
   by_action_class:
-    acting: 17
+    acting: 14
+    connected: 3
   by_consequence:
-    write: 17
+    write: 14
+    read: 3
   human_in_the_loop_required: 0
 operations:
 - path: /#X-Amz-Target=AWSMigrationHub.AssociateCreatedArtifact
@@ -160,18 +178,12 @@ operations:
   method: post
   operationId: ListApplicationStates
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=AWSMigrationHub.ListCreatedArtifacts
   method: post
   operationId: ListCreatedArtifacts
@@ -192,34 +204,22 @@ operations:
   method: post
   operationId: ListDiscoveredResources
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=AWSMigrationHub.ListMigrationTasks
   method: post
   operationId: ListMigrationTasks
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=AWSMigrationHub.ListProgressUpdateStreams
   method: post
   operationId: ListProgressUpdateStreams
